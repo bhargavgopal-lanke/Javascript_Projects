@@ -1,51 +1,91 @@
 body {
-    width: 100%;
-    height: 100%;
-    background-color: #152238;
-    padding: 0;
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    color: #fff;
+  width: 100%;
+  height: 100%;
+  background-color: #152238;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
 }
 
 .container {
-    max-width: 80%;
-    margin: 0 auto;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .calorie-form fieldset {
-    margin: 30px 0;
-    padding: 20px 40px;
+  margin: 30px 0;
+  padding: 20px 40px;
 }
 
 .calorie-form fieldset legend {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .budget-input {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 h1.text-center {
-    font-size: 42px;
+  font-size: 42px;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .my-3 {
-    margin: 30px 0;
+  margin: 30px 0;
 }
 
 h3 {
-    margin: 10px 0 10px;
+  margin: 10px 0 10px;
 }
 
 .form-control {
-    max-width: 100%;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    border: none;
+  max-width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: none;
+}
+
+.exercise-sec .exercise-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+select.snacks-dpdown {
+  margin: 0 15px;
+  padding: 0;
+  height: 25px;
+}
+
+button.yellow-button.xl-button {
+  width: 250px;
+}
+
+button.yellow-button {
+  background-color: #ffff00;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.exercise-sec {
+  margin-bottom: 30px;
+}
+
+.calorie-surplus-box {
+  padding: 10px;
+  border: 1px solid #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.calorie-surplus-box h3.light-green {
+  color: lightseagreen;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
 }
