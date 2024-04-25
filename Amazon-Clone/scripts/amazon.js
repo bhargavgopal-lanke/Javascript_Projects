@@ -1,5 +1,10 @@
 // loop through the product
 
+// new comcept learned about data attribute and syntax for it
+// 1. it's just an html attribute
+// 2. it have to start with "data-"
+// 3. then give it any name
+
 // below is the accumulator pattern we loop through the array add add the result to the variable
 let getListItems = "";
 products.forEach((product, index) => {
@@ -49,7 +54,7 @@ products.forEach((product, index) => {
             </div>
 
             <button class="add-to-cart-button button-primary js-add-to-cart"
-            data-product-id="${product.id}">
+           data-product-name=${product.name}>
             Add to Cart
             </button>
         </div>
