@@ -4,6 +4,8 @@
 // 1. it's just an html attribute
 // 2. it have to start with "data-"
 // 3. then give it any name
+// 4. the purpose of data attribute is to attach any information to an element
+// data-product-name=${product.name} => name and value pair
 
 // below is the accumulator pattern we loop through the array add add the result to the variable
 let getListItems = "";
@@ -28,7 +30,7 @@ products.forEach((product, index) => {
             </div>
 
             <div class="product-price">
-                $${(product.price / 100).toFixed(2)}
+                $${(product.priceCents / 100).toFixed(2)}
             </div>
 
             <div class="product-quantity-container">
@@ -54,7 +56,7 @@ products.forEach((product, index) => {
             </div>
 
             <button class="add-to-cart-button button-primary js-add-to-cart"
-           data-product-name=${product.name}>
+           data-product-name="${product.name}">
             Add to Cart
             </button>
         </div>
@@ -65,11 +67,19 @@ products.forEach((product, index) => {
 document.querySelector(".js-products-grid").innerHTML = getListItems;
 
 // this will give the list of all the add to card buttons in the page.
-let count = 0;
+let count = 1;
 document
   .querySelectorAll(".js-add-to-cart")
   .forEach((addToCartButton, index) => {
+    // console.log("addToCartButton.dataset", addToCartButton);
     addToCartButton.addEventListener("click", () => {
-      document.querySelector(".js-cart-quantity").innerHTML = count++;
+      const productName = addToCartButton.dataset.productName;
+      const countValue = document.querySelector(".js-cart-quantity").innerHTML = count++;
+      Cart.push({
+         productName,
+         countValue,
+      });
+
+      console.log(Cart);
     });
   });
