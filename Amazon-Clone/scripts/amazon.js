@@ -28,12 +28,93 @@ const products = [
     },
     price: 799,
   },
+  {
+    images: "images/products/black-2-slot-toaster.jpg",
+    name: "2 slot - Toaster - Black",
+    rating: {
+      stars: 5,
+      count: 2197,
+    },
+    price: 1899,
+  },
+  {
+    images: "images/products/6-piece-white-dinner-plate-set.jpg",
+    name: "6 Piece White Dinner Plate Set",
+    rating: {
+      stars: 4,
+      count: 37,
+    },
+    price: 2067,
+  },
+  {
+    images: "images/products/6-piece-non-stick-baking-set.webp",
+    name: "6-Piece Nonstick, Carbon Steel Oven Bakeware Baking Set",
+    rating: {
+      stars: 4.5,
+      count: 175,
+    },
+    price: 3499,
+  },
+  {
+    images: "images/products/plain-hooded-fleece-sweatshirt-yellow.jpg",
+    name: "Plain Hooded Fleece Sweatshirt",
+    rating: {
+      stars: 4.5,
+      count: 317,
+    },
+    price: 2400,
+  },
+  {
+    images: "images/products/luxury-tower-set-6-piece.jpg",
+    name: "Luxury Towel Set - Graphite Gray",
+    rating: {
+      stars: 4.5,
+      count: 144,
+    },
+    price: 3599,
+  },
+  {
+    images: "images/products/liquid-laundry-detergent-plain.jpg",
+    name: "Liquid Laundry Detergent, 110 Loads, 82.5 Fl Oz",
+    rating: {
+      stars: 4.5,
+      count: 305,
+    },
+    price: 2899,
+  },
+  {
+    images: "images/products/knit-athletic-sneakers-gray.jpg",
+    name: "Waterproof Knit Athletic Sneakers - Gray",
+    rating: {
+      stars: 4,
+      count: 89,
+    },
+    price: 3390,
+  },
+  {
+    images: "images/products/women-chiffon-beachwear-coverup-black.jpg",
+    name: "Women's Chiffon Beachwear Cover Up - Black",
+    rating: {
+      stars: 4.5,
+      count: 235,
+    },
+    price: 2070,
+  },
+  {
+    images: "images/products/round-sunglasses-black.jpg",
+    name: "Round Sunglasses",
+    rating: {
+      stars: 4.5,
+      count: 30,
+    },
+    price: 1560,
+  },
 ];
 
 // loop through the product
 
 function renderItemsList() {
-    // below is the accumulator pattern we loop through the array
+  // below is the accumulator pattern we loop through the array add add the result to the variable
   let getListItems = "";
   products.forEach((product, index) => {
     let productsHtml = `
@@ -56,7 +137,7 @@ function renderItemsList() {
             </div>
 
             <div class="product-price">
-                $${(product.price / 100).toFixed(2) }
+                $${(product.price / 100).toFixed(2)}
             </div>
 
             <div class="product-quantity-container">
