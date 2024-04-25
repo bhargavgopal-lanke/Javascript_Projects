@@ -8,7 +8,7 @@ const products = [
       stars: 4.5,
       count: 87,
     },
-    price: 10090,
+    price: 1090,
   },
   {
     images: "images/products/intermediate-composite-basketball.jpg",
@@ -17,7 +17,7 @@ const products = [
       stars: 4.0,
       count: 127,
     },
-    price: 20095,
+    price: 2095,
   },
   {
     images: "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
@@ -33,6 +33,7 @@ const products = [
 // loop through the product
 
 function renderItemsList() {
+    // below is the accumulator pattern we loop through the array
   let getListItems = "";
   products.forEach((product, index) => {
     let productsHtml = `
@@ -55,7 +56,7 @@ function renderItemsList() {
             </div>
 
             <div class="product-price">
-                $${(product.price) / 100 }
+                $${(product.price / 100).toFixed(2) }
             </div>
 
             <div class="product-quantity-container">
