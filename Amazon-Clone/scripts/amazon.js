@@ -1,11 +1,9 @@
-
 // loop through the product
 
-function renderItemsList() {
-  // below is the accumulator pattern we loop through the array add add the result to the variable
-  let getListItems = "";
-  products.forEach((product, index) => {
-    let productsHtml = `
+// below is the accumulator pattern we loop through the array add add the result to the variable
+let getListItems = "";
+products.forEach((product, index) => {
+  let productsHtml = `
         <div class="product-container" key="${index}">
             <div class="product-image-container">
             <img class="product-image"
@@ -56,10 +54,17 @@ function renderItemsList() {
             </button>
         </div>
     `;
-    getListItems += productsHtml;
+  getListItems += productsHtml;
+});
+
+document.querySelector(".js-products-grid").innerHTML = getListItems;
+
+// this will give the list of all the add to card buttons in the page.
+let count = 0;
+document
+  .querySelectorAll(".js-add-to-cart")
+  .forEach((addToCartButton, index) => {
+    addToCartButton.addEventListener("click", () => {
+      document.querySelector(".js-cart-quantity").innerHTML = count++;
+    });
   });
-
-  document.querySelector(".js-products-grid").innerHTML = getListItems;
-}
-
-renderItemsList();
