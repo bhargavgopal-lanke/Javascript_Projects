@@ -1,18 +1,18 @@
 import { Cart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
-let checkoutItems;
-Cart.forEach((cartItems) => {
-  const productId = cartItems.productId;
-  const productQuantity = cartItems.quantity;
-  let matchingProduct;
+let matchingProduct;
+function productsList(productId) {
   // looping through the products and return the product item which is matching with productId from cart
   products.forEach((product) => {
     if (productId === product.id) {
       matchingProduct = product;
     }
   });
+}
 
+let checkoutItems;
+function generateHtml(matchingProduct, productQuantity) {
   checkoutItems += `
   <div class="cart-item-container">
   <div class="delivery-date">
@@ -95,8 +95,13 @@ Cart.forEach((cartItems) => {
     Delivery date: Wednesday, June 15
   </div>
 </div>`;
+}
 
+Cart.forEach((cartItems) => {
+  const productId = cartItems.productId;
+  const productQuantity = cartItems.quantity;
+  productsList(productId);
+  generateHtml(matchingProduct, productQuantity);
   document.querySelector(".order-summary").innerHTML = checkoutItems;
-
   console.log("productListItem", matchingProduct);
 });
