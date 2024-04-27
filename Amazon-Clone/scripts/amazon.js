@@ -1,3 +1,8 @@
+// put all imports at the top of the file
+// modules only works with live server
+// add attribute type="module" to the main file where we import the other files"
+import { Cart as myCart } from "../data/cart.js";
+import { products } from "../data/products.js";
 // loop through the product
 
 // new comcept learned about data attribute and syntax for it
@@ -11,7 +16,7 @@
 let getListItems = "";
 products.forEach((product, index) => {
   let productsHtml = `
-        <div class="product-container"  key="${index}">
+        <div class="product-container" key="${index}">
             <div class="product-image-container">
             <img class="product-image"
                 src="${product.image}">
@@ -67,6 +72,7 @@ products.forEach((product, index) => {
 document.querySelector(".js-products-grid").innerHTML = getListItems;
 
 // this will give the list of all the add to card buttons in the page.
+
 let cartQuantity = 1;
 document.querySelectorAll(".js-add-to-cart").forEach((addToCartButton) => {
   // console.log("addToCartButton.dataset", addToCartButton);
@@ -78,7 +84,7 @@ document.querySelectorAll(".js-add-to-cart").forEach((addToCartButton) => {
     let matchingItem;
 
     // looping through all the cart items and comparing the selected productname with existing items product name
-    Cart.forEach((item) => {
+    myCart.forEach((item) => {
       if (productId === item.productId) {
         matchingItem = item;
       }
@@ -89,7 +95,7 @@ document.querySelectorAll(".js-add-to-cart").forEach((addToCartButton) => {
     if (matchingItem) {
       matchingItem.quantity += 1;
     } else {
-      Cart.push({
+      myCart.push({
         productId,
         quantity: 1,
       });

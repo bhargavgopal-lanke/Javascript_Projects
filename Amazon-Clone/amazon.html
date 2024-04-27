@@ -55,10 +55,14 @@
       <div class="products-grid js-products-grid"></div>
     </div>
 
+    <!-- when the application is not running on the live server we have to use the script tags -->
      <!-- it'll run the cart js file at the start -->
-    <script src="./data/cart.js"></script>
-    <script src="./data/products.js"></script>
-    <script src="./scripts/amazon.js"></script>
+     <!-- It'll load cart js file first in order load the Cart variable in the amazon.js file -->
+    <!-- Order of the scripts really matter in the script tag imports -->
+    <!-- <script src="./data/cart.js"></script> -->
+    <!-- <script src="./data/products.js"></script> -->
+    <!-- we need one js file to load our code -->
+    <script type="module" src="./scripts/amazon.js"></script>
     
   </body>
 </html>
