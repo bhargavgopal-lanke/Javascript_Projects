@@ -1,7 +1,8 @@
 // put all imports at the top of the file
 // modules only works with live server
 // add attribute type="module" to the main file where we import the other files"
-import { Cart as myCart } from "../data/cart.js";
+// modules are a better way to organise our code
+import { addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 // loop through the product
 
@@ -14,7 +15,16 @@ import { products } from "../data/products.js";
 
 // below is the accumulator pattern we loop through an array add add the result to the variable
 let getListItems = "";
-products.forEach((product, index) => {
+function renderProductsList() {
+  products.forEach((product, index) => {
+    renderProductsHtmlList(product, index);
+  });
+  document.querySelector(".js-products-grid").innerHTML = getListItems;
+}
+
+renderProductsList();
+
+function renderProductsHtmlList(product, index) {
   let productsHtml = `
         <div class="product-container" key="${index}">
             <div class="product-image-container">
@@ -67,40 +77,21 @@ products.forEach((product, index) => {
         </div>
     `;
   getListItems += productsHtml;
-});
-
-document.querySelector(".js-products-grid").innerHTML = getListItems;
-
-// this will give the list of all the add to card buttons in the page.
+}
 
 let cartQuantity = 1;
+// update the cart items quantity
+function updateCartQuantity(productId) {
+  document.querySelector(".js-cart-quantity").innerHTML = cartQuantity++;
+}
+
+// this will give the list of all the add to card buttons in the page.
 document.querySelectorAll(".js-add-to-cart").forEach((addToCartButton) => {
   // console.log("addToCartButton.dataset", addToCartButton);
   addToCartButton.addEventListener("click", () => {
-    // selected productname value we're getting it by using dataset
-    // dataset convert from kebab case(product-id) to camelCase(productID)
     const productId = addToCartButton.dataset.productId;
-
-    let matchingItem;
-
     // looping through all the cart items and comparing the selected productname with existing items product name
-    myCart.forEach((item) => {
-      if (productId === item.productId) {
-        matchingItem = item;
-      }
-    });
-
-    // if the matching item is true increasing the quantity of the item object
-
-    if (matchingItem) {
-      matchingItem.quantity += 1;
-    } else {
-      myCart.push({
-        productId,
-        quantity: 1,
-      });
-    }
-
-    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity++;
+    addToCart(productId);
+    updateCartQuantity(productId);
   });
 });
