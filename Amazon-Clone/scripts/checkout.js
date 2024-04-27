@@ -1,5 +1,6 @@
 import { Cart } from "../data/cart.js";
 import { products } from "../data/products.js";
+import { formatCurrency } from "./utils/utils.js";
 
 let matchingProduct;
 function productsList(productId) {
@@ -28,7 +29,7 @@ function generateHtml(matchingProduct, productQuantity) {
         ${matchingProduct.name}
       </div>
       <div class="product-price">
-      ${(matchingProduct.priceCents / 100).toFixed(2)}
+      ${formatCurrency(matchingProduct.priceCents)}
       </div>
       <div class="product-quantity">
         <span>
@@ -50,7 +51,7 @@ function generateHtml(matchingProduct, productQuantity) {
       <div class="delivery-option">
         <input type="radio" checked
           class="delivery-option-input"
-          name="delivery-option-1">
+          name="delivery-option-${matchingProduct.id}">
         <div>
           <div class="delivery-option-date">
             Tuesday, June 21
@@ -63,7 +64,7 @@ function generateHtml(matchingProduct, productQuantity) {
       <div class="delivery-option">
         <input type="radio"
           class="delivery-option-input"
-          name="delivery-option-1">
+          name="delivery-option-${matchingProduct.id}">
         <div>
           <div class="delivery-option-date">
             Wednesday, June 15
@@ -76,7 +77,7 @@ function generateHtml(matchingProduct, productQuantity) {
       <div class="delivery-option">
         <input type="radio"
           class="delivery-option-input"
-          name="delivery-option-1">
+          name="delivery-option-${matchingProduct.id}">
         <div>
           <div class="delivery-option-date">
             Monday, June 13
