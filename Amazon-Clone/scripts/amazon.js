@@ -2,7 +2,7 @@
 // modules only works with live server
 // add attribute type="module" to the main file where we import the other files"
 // modules are a better way to organise our code
-import { addToCart } from "../data/cart.js";
+import { Cart, addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/utils.js";
 // loop through the product
@@ -82,7 +82,7 @@ function renderProductsHtmlList(product, index) {
 
 let cartQuantity = 1;
 // update the cart items quantity
-function updateCartQuantity(productId) {
+function updateCartQuantity() {
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity++;
 }
 
@@ -90,9 +90,11 @@ function updateCartQuantity(productId) {
 document.querySelectorAll(".js-add-to-cart").forEach((addToCartButton) => {
   // console.log("addToCartButton.dataset", addToCartButton);
   addToCartButton.addEventListener("click", () => {
+    // selected productname value we're getting it by using dataset
     const productId = addToCartButton.dataset.productId;
     // looping through all the cart items and comparing the selected productname with existing items product name
     addToCart(productId);
-    updateCartQuantity(productId);
+    updateCartQuantity();
+    localStorage.setItem("Cart", JSON.stringify(Cart));
   });
 });

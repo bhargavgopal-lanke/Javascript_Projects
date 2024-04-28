@@ -1,4 +1,4 @@
-import { Cart } from "../data/cart.js";
+import { Cart, removeFromCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/utils.js";
 
@@ -38,7 +38,9 @@ function generateHtml(matchingProduct, productQuantity) {
         <span class="update-quantity-link link-primary">
           Update
         </span>
-        <span class="delete-quantity-link link-primary">
+        <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${
+          matchingProduct.id
+        }">
           Delete
         </span>
       </div>
@@ -98,7 +100,9 @@ function generateHtml(matchingProduct, productQuantity) {
 </div>`;
 }
 
-Cart.forEach((cartItems) => {
+const cartData = JSON.parse(localStorage.getItem("Cart"));
+// get the cartData from localstorage and render it in checkout page
+cartData.forEach((cartItems) => {
   const productId = cartItems.productId;
   const productQuantity = cartItems.quantity;
   productsList(productId);
@@ -106,3 +110,15 @@ Cart.forEach((cartItems) => {
   document.querySelector(".order-summary").innerHTML = checkoutItems;
   console.log("productListItem", matchingProduct);
 });
+
+
+  document.querySelectorAll(".js-delete-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      // the product we're trying to remove
+      const productId = link.dataset.productId;
+      removeFromCart(productId);
+    });
+  });
+
+
+
