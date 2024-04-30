@@ -80,9 +80,13 @@ function renderProductsHtmlList(product, index) {
   getListItems += productsHtml;
 }
 
-let cartQuantity = 1;
+// let cartQuantity = 1;
 // update the cart items quantity
 function updateCartQuantity() {
+  let cartQuantity = 0;
+  Cart.forEach((item) => {
+    cartQuantity += item.quantity;
+  });
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity++;
 }
 
@@ -95,6 +99,5 @@ document.querySelectorAll(".js-add-to-cart").forEach((addToCartButton) => {
     // looping through all the cart items and comparing the selected productname with existing items product name
     addToCart(productId);
     updateCartQuantity();
-    localStorage.setItem("Cart", JSON.stringify(Cart));
   });
 });

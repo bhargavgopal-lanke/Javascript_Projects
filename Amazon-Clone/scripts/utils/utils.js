@@ -3,5 +3,6 @@ export function formatCurrency(priceCents) {
 }
 
 export function generateRandomDate() {
-
+  const date = Date();
+  console.log("date", date());
 }

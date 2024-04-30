@@ -1,6 +1,6 @@
 import { Cart, removeFromCart } from "../data/cart.js";
 import { products } from "../data/products.js";
-import { formatCurrency } from "./utils/utils.js";
+import { formatCurrency, generateRandomDate } from "./utils/utils.js";
 
 let matchingProduct;
 function productsList(productId) {
@@ -100,9 +100,8 @@ function generateHtml(matchingProduct, productQuantity) {
 </div>`;
 }
 
-const cartData = JSON.parse(localStorage.getItem("Cart"));
 // get the cartData from localstorage and render it in checkout page
-cartData.forEach((cartItems) => {
+Cart.forEach((cartItems) => {
   const productId = cartItems.productId;
   const productQuantity = cartItems.quantity;
   productsList(productId);
@@ -110,17 +109,21 @@ cartData.forEach((cartItems) => {
   document.querySelector(".order-summary").innerHTML = checkoutItems;
 });
 
+const today = dayjs();
 
-  document.querySelectorAll(".js-delete-link").forEach((link, index) => {
-    link.addEventListener("click", () => {
-      // the product we're trying to remove
-      const productId = link.dataset.productId;
-      removeFromCart(productId);
-      const [container, containerOne] = document.querySelectorAll(`.js-cart-item-container-${productId}`);
-      container.remove();
-      containerOne.remove();
-    });
+const deliveryDate = today.add(7, "days");
+
+console.log("deliverDate", deliveryDate);
+
+document.querySelectorAll(".js-delete-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    // the product we're trying to remove
+    const productId = link.dataset.productId;
+    removeFromCart(productId);
+    const [container, containerOne] = document.querySelectorAll(
+      `.js-cart-item-container-${productId}`
+    );
+    container.remove();
+    containerOne.remove();
   });
-
-
-
+});
