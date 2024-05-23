@@ -4,7 +4,7 @@ export function formatCurrency(priceCents) {
 
 export function generateRandomDate(deliveryOption) {
   const today = dayjs(); // get todays date
-  const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
+  const deliveryDate = today.add(deliveryOption, "days");
   const dateString = deliveryDate.format("dddd, MMMM D");
   return dateString;
 }

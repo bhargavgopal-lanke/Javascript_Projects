@@ -1,7 +1,7 @@
 import { Cart, removeFromCart } from "../data/cart.js";
 import { deliveryOptions } from "../data/deliveryOptions.js";
 import { products } from "../data/products.js";
-import { formatCurrency, generateRandomDate } from "./utils/utils.js";
+import { formatCurrency } from "./utils/utils.js";
 
 let matchingProduct;
 function productsList(productId) {
