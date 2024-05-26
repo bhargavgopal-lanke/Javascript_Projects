@@ -60,15 +60,15 @@ export function removeFromCart(productId) {
 }
 
 // we need the productId and deliveryOptionId to update the deliveryOptions
-export function updateDeliveryOption(productId, deliveryOptionId) {
+export function updateDeliveryOption(productId, deliveryoptionId) {
   let matchingProduct;
-  Cart.forEach((deliveryItems) => {
+  Cart.forEach((cartItem) => {
     // return the product from the cart when the productid and the cartItems Id matches
-    if (productId === deliveryItems.productId) {
-      matchingProduct = deliveryItems;
+    if (productId === cartItem.productId) {
+      matchingProduct = cartItem;
     }
   });
 
-  matchingProduct.deliveryOptionId = deliveryOptionId;
+  matchingProduct.deliveryOptionId = deliveryoptionId;
   saveToStorage();
 }
