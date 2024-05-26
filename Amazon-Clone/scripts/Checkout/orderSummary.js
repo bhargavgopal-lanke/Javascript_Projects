@@ -1,18 +1,17 @@
-
-
 import { Cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
-import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
-import {  productsList } from "../../data/products.js";
+import {
+  deliveryOptions,
+  getDeliveryOption,
+} from "../../data/deliveryOptions.js";
+import { productsList } from "../../data/products.js";
 import { formatCurrency } from "../utils/utils.js";
-
 
 export function orderSummary() {
   let checkoutItems;
   function generateHtml(matchingProduct, cartItems) {
-    const deliveryOptionId = cartItems.deliveryOptionId;
 
+    const deliveryOptionId = cartItems.deliveryOptionId;
     const deliveryOption = getDeliveryOption(deliveryOptionId);
-    
 
     // calculated the date for each delivery option
     const today = dayjs(); // get todays date
@@ -56,10 +55,13 @@ export function orderSummary() {
           </div>
     
           <div class="delivery-options">
+          
             <div class="delivery-options-title">
               Choose a delivery option:
             </div>
-            ${deliverOptionsHtml(matchingProduct, cartItems)}       
+            <div>
+                ${deliverOptionsHtml(matchingProduct, cartItems)} 
+            </div>      
           </div>
        </div>
     </div>
@@ -77,7 +79,7 @@ export function orderSummary() {
   Cart.forEach((cartItems) => {
     const productId = cartItems.productId;
     const matchingProduct = productsList(productId);
-    
+
     generateHtml(matchingProduct, cartItems);
     document.querySelector(".order-summary").innerHTML = checkoutItems;
   });
@@ -97,7 +99,8 @@ export function orderSummary() {
           ? "Free"
           : `$${formatCurrency(deliveryOption.priceCents)}`;
 
-      const isChecked = deliveryOption.id === cartItems.deliveryOptionId ? "checked" : "";
+      const isChecked =
+        deliveryOption.id === cartItems.deliveryOptionId ? "checked" : "";
 
       let deliveryHtml = `
         <div class="delivery-option 
