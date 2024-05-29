@@ -1,7 +1,8 @@
 // localStorage will give the string version of our cart
 // In order to convert string to array we have to use JSON.parse
+// because of reassigning the variable we're changing const to let for storing the cart items.
 export let Cart = JSON.parse(localStorage.getItem("Cart"));
-// if the cart value is null Cart will become truthy
+// if the cart value is null/empty Cart will become truthy
 // !null will become truthy if the value is null
 if (!Cart) {
   Cart = [
@@ -20,6 +21,8 @@ if (!Cart) {
 
 // save the data to local storage
 function saveToStorage() {
+  // to save our cart we need to convert it into string first so we can sae it n local storage.
+  // local storage can only save strings so save the data in JSON.stringify() method.
   localStorage.setItem("Cart", JSON.stringify(Cart));
 }
 
@@ -50,6 +53,7 @@ export function removeFromCart(productId) {
   Cart.forEach((cartItems) => {
     // adding each items to the cart array except this productId item.
     // if it's not equal to the product we're trying to remove then add it to the new cart
+    // add each product to the new array except for this productid.
     if (cartItems.productId !== productId) {
       newCart.push(cartItems);
     }

@@ -6,6 +6,11 @@ import {
 import { productsList } from "../../data/products.js";
 import { formatCurrency } from "../utils/utils.js";
 
+// Main idea of javascript
+// 1. save the data.
+// 2. Generate the HTML
+// 3. Make it interactive
+
 export function orderSummary() {
   let checkoutItems;
   function generateHtml(matchingProduct, cartItems) {
@@ -20,8 +25,8 @@ export function orderSummary() {
 
     checkoutItems += `
       <div class="cart-item-container js-cart-item-container-${
-        matchingProduct.id
-      }">
+          matchingProduct.id
+        }">
         <div class="delivery-date">
           Delivery date: ${dateString}
         </div>
@@ -68,10 +73,10 @@ export function orderSummary() {
     
     <div class="cart-item-container js-cart-item-container-${
       matchingProduct.id
-    }">
-      <div class="delivery-date">
-        Delivery date: ${dateString}
-      </div>
+      }">
+        <div class="delivery-date">
+          Delivery date: ${dateString}
+        </div>
     </div>`;
   }
 
@@ -130,7 +135,9 @@ export function orderSummary() {
     link.addEventListener("click", () => {
       // the product we're trying to remove
       const productId = link.dataset.productId;
+      // update the cart with remaining items and return the cart;
       removeFromCart(productId);
+      // every element we get with dom has a method called .remove();
       const [container, containerOne] = document.querySelectorAll(
         `.js-cart-item-container-${productId}`
       );

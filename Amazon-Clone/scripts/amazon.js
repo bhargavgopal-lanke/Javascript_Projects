@@ -87,7 +87,7 @@ function updateCartQuantity() {
   Cart.forEach((item) => {
     cartQuantity += item.quantity;
   });
-  document.querySelector(".js-cart-quantity").innerHTML = cartQuantity++;
+  document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
 }
 
 // this will give the list of all the add to card buttons in the page.
