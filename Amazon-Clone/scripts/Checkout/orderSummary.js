@@ -5,6 +5,7 @@ import {
 } from "../../data/deliveryOptions.js";
 import { productsList } from "../../data/products.js";
 import { formatCurrency } from "../utils/utils.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 // Main idea of javascript
 // 1. save the data.
@@ -142,6 +143,9 @@ export function orderSummary() {
       );
       container.remove();
       containerOne.remove();
+
+      // regenarate all the html
+      renderPaymentSummary();
     });
   });
 
