@@ -84,7 +84,6 @@ export function orderSummary() {
   Cart.forEach((cartItems) => {
     const productId = cartItems.productId;
     const matchingProduct = productsList(productId);
-
     generateHtml(matchingProduct, cartItems);
     document.querySelector(".order-summary").innerHTML = checkoutItems;
   });
