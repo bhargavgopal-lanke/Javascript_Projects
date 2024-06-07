@@ -1,4 +1,4 @@
-const Cart = {
+export const Cart = {
   cartItems: undefined,
   loadFromStorage() {
     this.cartItems = JSON.parse(localStorage.getItem("cart-oop"));
@@ -66,4 +66,4 @@ const Cart = {
   },
 };
 
-loadFromStorage();
+Cart.loadFromStorage();
