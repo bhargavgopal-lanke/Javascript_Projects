@@ -156,6 +156,7 @@ export function orderSummary() {
       // inside the render summary function we can call render order summary again
       // a function can call/ rerun itself and this feature is called recursion.
       orderSummary();
+      renderPaymentSummary();
     });
   });
 }
