@@ -39,7 +39,7 @@ export const Cart = {
         deliveryOptionId: "1",
       });
     }
-    saveToStorage();
+    this.saveToStorage();
   },
 
   removeFromCart(productId) {
@@ -51,7 +51,7 @@ export const Cart = {
     });
 
     this.cartItems = newCart;
-    saveToStorage();
+    this.saveToStorage();
   },
   updateDeliveryOption(productId, deliveryoptionId) {
     let matchingProduct;
@@ -62,8 +62,9 @@ export const Cart = {
     });
 
     matchingProduct.deliveryOptionId = deliveryoptionId;
-    saveToStorage();
+    this.saveToStorage();
   },
 };
 
 Cart.loadFromStorage();
+Cart.addToCart('54e0eccd-8f36-462b-b68a-8182611d9add');
