@@ -33,7 +33,7 @@
           }, i * 1000);
         }
       }
-      z();
+      // z();
 
       // increase numbers from 1 to 5 for every second using var keyword and closures
 
@@ -48,7 +48,22 @@
         }
       }
 
-      k();
+      // k();
+
+      // closures interview example
+
+      function outer() {
+        var a = 10;
+        function inner() {
+          console.log(a);
+        }
+        // return inner;
+        inner();
+      }
+      outer();
+      // outer()();
+      // let closeResult = outer();
+      // closeResult();
     </script>
   </body>
 </html>
