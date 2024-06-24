@@ -57,25 +57,27 @@
         function inner() {
           console.log(a);
         }
-        // return inner;
-        inner();
+        return inner;
+        // inner();
       }
       // outer();
       // outer()();
-      // let closeResult = outer();
-      // closeResult();
+      let closeResult = outer();
+      closeResult();
 
       // counter example
 
       function counter() {
         let count = 0;
-        function increment() {
+       return function increment() {
           count++;
-          console.log(count);
+          console.log("first count", count);
         }
-        increment();
       }
-      counter();
+      let count1 = counter();
+      count1();
+      count1();
+      count1();
 
       // counter another example
 
@@ -88,6 +90,8 @@
       }
 
       let countResult = counterOne();
+      countResult();
+      countResult();
       countResult();
     </script>
   </body>
