@@ -60,10 +60,35 @@
         // return inner;
         inner();
       }
-      outer();
+      // outer();
       // outer()();
       // let closeResult = outer();
       // closeResult();
+
+      // counter example
+
+      function counter() {
+        let count = 0;
+        function increment() {
+          count++;
+          console.log(count);
+        }
+        increment();
+      }
+      counter();
+
+      // counter another example
+
+      function counterOne() {
+        let count = 2;
+        return function incrementCounter() {
+          count++;
+          console.log(count);
+        };
+      }
+
+      let countResult = counterOne();
+      countResult();
     </script>
   </body>
 </html>
