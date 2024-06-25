@@ -95,8 +95,8 @@
       countResult();
 
       // counter example wiith constructor function
-
-      function counterConstructor() {
+      // for good naming convention use first letter as capital for constructor function.
+      function CounterConstructor() {
         let count = 0;
         this.incrementCounter1 = function () {
           count++;
@@ -109,7 +109,7 @@
       }
 
       // so this is a constructor function we have to use a new keyword here
-      let constructorResult = new counterConstructor();
+      let constructorResult = new CounterConstructor();
       constructorResult.incrementCounter1();
       constructorResult.incrementCounter1();
       constructorResult.incrementCounter1();
