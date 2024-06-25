@@ -41,11 +41,21 @@
 
       // named function expression
       // this example will throw an reference error.
-      let namedb = function xyz() {
-        console.log("xyz");
-      };
+      //   let namedb = function xyz() {
+      //     console.log("xyz");
+      //   };
 
-      namedb();
+      //   namedb();
+
+      // -------------------------------------------------------------------------------------------------------------
+
+      // difference between parameters and arguments
+      // parameters
+      function paramsAndArgs(param1, param2, param3) {
+        console.log(param1, param2, param3);
+      }
+      // arguments
+      paramsAndArgs("bhargav", "gopal", "lanke");
     </script>
   </body>
 </html>
