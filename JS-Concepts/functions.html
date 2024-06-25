@@ -12,13 +12,15 @@
   </head>
   <body>
     <script>
-      // function statement
+      // function statement is also known as function declaration
       function a() {
         console.log("a called");
       }
       a();
 
       // function expression
+      // function expressions can't be hoisted 
+      // because the variable gets stored in the local space initially as undefined until it hits the line of code.
 
       let b = function () {
         console.log("b called");
