@@ -93,6 +93,31 @@
       countResult();
       countResult();
       countResult();
+
+      // counter example wiith constructor function
+
+      function counterConstructor() {
+        let count = 0;
+        this.incrementCounter1 = function () {
+          count++;
+          console.log("increment count", count);
+        }
+        this.decrementCounter = function () {
+          count--;
+          console.log("increment count", count);
+        }
+      }
+
+      // so this is a constructor function we have to use a new keyword here
+      let constructorResult = new counterConstructor();
+      constructorResult.incrementCounter1();
+      constructorResult.incrementCounter1();
+      constructorResult.incrementCounter1();
+      constructorResult.decrementCounter();
+      constructorResult.decrementCounter();
+      constructorResult.decrementCounter();
+
+
     </script>
   </body>
 </html>
