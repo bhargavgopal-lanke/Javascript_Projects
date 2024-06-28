@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Listeners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button id="clickMe">Cick Me</button>
+    <script>
+      // count how any times the button was clicked
+      // we use closure for data hiding
+
+      // event loop checks the call stack is empty or not and send the callbacks from callback que
+      // event loop checks the call stack is empty or not and if there is some function lined up to be executed
+      // in the callback que.
+
+
+      //*** important things to remember
+      // everything in js will be executed in the callstack
+      // we APi's from browser setTimeout(), DOM API's, fetch(), console
+      // in case of network calls call back functions (CBF) will go to the microtask que
+      // all the CBF"s which comes through promises wll go to micro task que.
+      // CBF's which are in micro task que are executed first
+      // so again here event loop will check the call stack is empty or not and push the CBF's from micro task que
+
+      function countIncrement() {
+        let count = 0;
+        return function increment() {
+          count++;
+          console.log(`button clicked ${count} times`);
+        };
+      }
+      let clickCount = countIncrement();
+
+    //   document.getElementById("clickMe").addEventListener("click", () => {
+    //     clickCount();
+    //   });
+
+      // another click calculate example with closure
+
+      function attachEventClosure() {
+        let count = 0;
+        document.getElementById("clickMe").addEventListener("click", () => {
+            console.log("Button clicked", ++count);
+        });
+      }
+
+      attachEventClosure();
+
+      // another example for count increment but not in a secure way
+
+      let count = 0;
+      document.getElementById("clickMe").addEventListener("click", () => {
+        ++count;
+        console.log(`button clicked ${count} times`);
+      });
+    </script>
+  </body>
+</html>
