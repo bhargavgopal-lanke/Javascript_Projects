@@ -17,7 +17,14 @@
         return output;
       };
 
-      
+      // calculating the circumference of the circle
+      function calculateCircumference() {
+        const output = [];
+        for (let i = 0; i < radius.length; i++) {
+          output.push(2 * Math.PI * radius[i]);
+        }
+        return output;
+      }
     </script>
   </body>
 </html>
