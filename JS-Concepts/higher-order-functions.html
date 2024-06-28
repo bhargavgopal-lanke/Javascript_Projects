@@ -16,6 +16,7 @@
         }
         return output;
       };
+      console.log("area",calcualteArea(radius));
 
       // calculating the circumference of the given radius
       const calculateCircumference = function (radius) {
@@ -25,6 +26,7 @@
         }
         return output;
       };
+      console.log("cir",calculateCircumference(radius));
 
       // calculate the diameter of the given radius
 
@@ -33,7 +35,10 @@
         for (let i = 0; i < radius.length; i++) {
           output.push(2 * radius[i]);
         }
+        return output;
       };
+      console.log("Di",calculateDaimeter(radius));
+      
     </script>
   </body>
 </html>
