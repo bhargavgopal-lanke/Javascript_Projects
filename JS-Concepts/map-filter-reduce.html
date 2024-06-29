@@ -32,7 +32,7 @@
 
       // check odd numbers using filter
 
-      const newArr = [5, 1, 3, 2, 6, 7];
+      const newArr = [5, 1, 3, 2, 6, 7, 11];
 
       function isFilterOdd(x) {
         return x % 2;
@@ -74,6 +74,32 @@
       }
 
       console.log("total sum", findSum(newArr));
+
+      // sum example with reduce method
+
+      const output4 = newArr.reduce((acc, curr) => {
+        acc = acc + curr;
+        return acc;
+      }, 0);
+
+      console.log("reduce value", output4);
+
+      // find the max number in the array
+
+      function maxNumber(arr) {
+        let max = 0;
+        // i iterate over each value
+        for (let i = 0; i < arr.length; i++) {
+          // if our current value is greater than maximum so that max would be that current value.
+          if (arr[i] > max) {
+            // ovveride the maximum with the current value 'arr[i]'
+            max = arr[i];
+          }
+        }
+        return max;
+      }
+
+      console.log("max umber1", maxNumber(newArr));
     </script>
   </body>
 </html>
