@@ -51,6 +51,17 @@
       console.log("ageList using filter method", ageList);
       console.log("firstMapName using map method", firstMapName);
 
+      // get the users list where age is less than 30 using reduce method.
+
+      let reduceAgeResult = users.reduce((acc, curr) => {
+        if (curr.Age < 30) {
+          acc.push(curr.firstName);
+        }
+        return acc;
+      }, []);
+
+      console.log("reduceAgeResult", reduceAgeResult);
+
       // reduce method will run through each and every value in the array.
       const reduceResult = users.reduce((acc, curr) => {
         if (acc[curr.Age]) {
