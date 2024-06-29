@@ -100,6 +100,17 @@
       }
 
       console.log("max umber1", maxNumber(newArr));
+
+        // find the max number in the array using reduce method.
+
+        let output5 = newArr.reduce((acc, curr) => {
+            if(curr > acc) {
+                acc = curr
+            }
+            return acc;
+        }, 0);
+
+        console.log("acc value max", output5);
     </script>
   </body>
 </html>
