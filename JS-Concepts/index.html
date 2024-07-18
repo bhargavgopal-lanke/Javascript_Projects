@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Js Examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script>
+      // closures example
+
+      function x() {
+        let a = 10;
+        function y() {
+          console.log("a inside closure", a);
+        }
+        y();
+      }
+
+      x();
+
+      // increase numbers from 1 to 5 for every second
+
+      function z() {
+        for (let i = 1; i <= 5; i++) {
+          setTimeout(function () {
+            console.log(i);
+          }, i * 1000);
+        }
+      }
+      // z();
+
+      // increase numbers from 1 to 5 for every second using var keyword and closures
+
+      function k() {
+        for (var i = 1; i <= 5; i++) {
+          function close(x) {
+            setTimeout(function () {
+              console.log(x);
+            }, x * 1000);
+          }
+          close(i);
+        }
+      }
+
+      // k();
+
+      // closures interview example
+
+      function outer() {
+        var a = 10;
+        function inner() {
+          console.log(a);
+        }
+        return inner;
+        // inner();
+      }
+      // outer();
+      // outer()();
+      let closeResult = outer();
+      closeResult();
+
+      // counter example
+
+      function counter() {
+        let count = 0;
+       return function increment() {
+          count++;
+          console.log("first count", count);
+        }
+      }
+      let count1 = counter();
+      count1();
+      count1();
+      count1();
+
+      // counter another example
+
+      function counterOne() {
+        let count = 2;
+        return function incrementCounter() {
+          count++;
+          console.log(count);
+        };
+      }
+
+      let countResult = counterOne();
+      countResult();
+      countResult();
+      countResult();
+
+      // counter example wiith constructor function
+      // for good naming convention use first letter as capital for constructor function.
+      function CounterConstructor() {
+        let count = 0;
+        this.incrementCounter1 = function () {
+          count++;
+          console.log("increment count", count);
+        }
+        this.decrementCounter = function () {
+          count--;
+          console.log("increment count", count);
+        }
+      }
+
+      // so this is a constructor function we have to use a new keyword here
+      let constructorResult = new CounterConstructor();
+      constructorResult.incrementCounter1();
+      constructorResult.incrementCounter1();
+      constructorResult.incrementCounter1();
+      constructorResult.decrementCounter();
+      constructorResult.decrementCounter();
+      constructorResult.decrementCounter();
+
+
+    </script>
+  </body>
+</html>

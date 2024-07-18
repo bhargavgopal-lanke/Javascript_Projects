@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./styles/amazon.css" />
+    <link rel="stylesheet" href="./styles/amazon-header.css" />
+    <link rel="stylesheet" href="./styles/general.css" />
+  </head>
+  <body>
+    <div class="amazon-header">
+      <div class="amazon-header-left-section">
+        <a href="amazon.html" class="header-link">
+          <img class="amazon-logo" src="./images/amazon-logo.png" />
+          <img
+            class="amazon-mobile-logo"
+            src="images/amazon-mobile-logo-white.png"
+          />
+        </a>
+      </div>
+
+      <div class="amazon-header-middle-section">
+        <input class="search-bar" type="text" placeholder="Search" />
+
+        <button class="search-button">
+          <img class="search-icon" src="./images/search-icon.png" />
+        </button>
+      </div>
+
+      <div class="amazon-header-right-section">
+        <a class="orders-link header-link" href="orders.html">
+          <span class="returns-text">Returns</span>
+          <span class="orders-text">& Orders</span>
+        </a>
+
+        <a class="cart-link header-link" href="checkout.html">
+          <img class="cart-icon" src="./images/cart-icon.png" />
+          <div class="cart-quantity js-cart-quantity">0</div>
+          <div class="cart-text">Cart</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="products-grid js-products-grid"></div>
+    </div>
+
+    <!-- when the application is not running on the live server we have to use the script tags -->
+    <!-- it'll run the cart js file at the start -->
+    <!-- It'll load cart js file first in order load the Cart variable in the amazon.js file -->
+    <!-- Order of the scripts really matter in the script tag imports and it's really hard to manage when we have lots of files -->
+    <!-- <script src="./data/cart.js"></script> -->
+    <!-- <script src="./data/products.js"></script> -->
+    <!-- we need one js file to load our code -->
+    <script type="module" src="./scripts/amazon.js"></script>
+    <!--this file is the entry point to import other files -->
+  </body>
+</html>
