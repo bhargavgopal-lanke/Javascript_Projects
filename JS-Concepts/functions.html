@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script>
+      // function statement is also known as (aka) function declaration
+      function a() {
+        console.log("a called");
+      }
+      a();
+
+      // -------------------------------------------------------------------------------------------------------------
+
+      // function expression
+      // function expressions can't be hoisted
+      // because the variable gets stored in the local space initially as undefined until it hits the line of code.
+
+      let b = function () {
+        console.log("b called");
+      };
+      b();
+
+      // -------------------------------------------------------------------------------------------------------------
+
+      // anonymous functions
+
+      //   function () {
+
+      //   }
+
+      // -------------------------------------------------------------------------------------------------------------
+
+      // named function expression
+      // this example will throw an reference error.
+      //   let namedb = function xyz() {
+      //     console.log("xyz");
+      //   };
+
+      //   namedb();
+
+      // -------------------------------------------------------------------------------------------------------------
+
+      // difference between parameters and arguments
+      // parameters
+      function paramsAndArgs(param1, param2, param3) {
+        console.log(param1, param2, param3);
+      }
+      // the values which we pass inside a function are called arguments
+      // arguments
+      paramsAndArgs("bhargav", "gopal", "lanke");
+
+      // -------------------------------------------------------------------------------------------------------------
+
+      // first class fuctions
+      // the ability to use functions as values is called first class functions
+      // we can pass functions inside functions as an arguments
+
+    </script>
+  </body>
+</html>
