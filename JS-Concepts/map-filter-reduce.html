@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map filter reduce</title>
+  </head>
+  <body>
+    <script>
+      const arr = [5, 1, 10, 12, 6];
+
+      const output = arr.map((x) => x * 2);
+      console.log(" output", output);
+
+      // function to check even number
+
+      function isEven(x) {
+        return x % 2 === 0;
+      }
+
+      console.log("even", isEven(3));
+
+      // function to check odd number
+
+      function isOdd(x) {
+        return x % 2 !== 0;
+      }
+
+      console.log("odd", isOdd(3));
+
+      // filter function is used to filter the values inside an array
+
+      // check odd numbers using filter
+
+      const newArr = [5, 1, 3, 2, 6, 7, 11];
+
+      function isFilterOdd(x) {
+        return x % 2;
+      }
+
+      const output1 = newArr.filter(isFilterOdd);
+
+      console.log("output1", output1);
+
+      // check Even numbers using filter
+
+      function isFilterEven(x) {
+        return x % 2 === 0;
+      }
+
+      const output2 = newArr.filter(isFilterEven);
+
+      console.log("output2", output2);
+
+      // check numbers which are greater than 4 in the given array
+
+      function greaterThanFour(x) {
+        return x > 4;
+      }
+
+      const output3 = newArr.filter(greaterThanFour);
+      console.log("output3", output3);
+
+      // reduce  example
+
+      // sum or max number
+
+      function findSum(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum = sum + arr[i];
+        }
+        return sum;
+      }
+
+      console.log("total sum", findSum(newArr));
+
+      // sum example with reduce method
+
+      const output4 = newArr.reduce((acc, curr) => {
+        acc = acc + curr;
+        return acc;
+      }, 0);
+
+      console.log("reduce value", output4);
+
+      // find the max number in the array
+
+      function maxNumber(arr) {
+        let max = 0;
+        // i iterate over each value
+        for (let i = 0; i < arr.length; i++) {
+          // if our current value is greater than maximum so that max would be that current value.
+          if (arr[i] > max) {
+            // ovveride the maximum with the current value 'arr[i]'
+            max = arr[i];
+          }
+        }
+        return max;
+      }
+
+      console.log("max umber1", maxNumber(newArr));
+
+        // find the max number in the array using reduce method.
+        // acc name can be anything like generic
+        let output5 = newArr.reduce((max, curr) => {
+            if(curr > max) {
+                max = curr
+            }
+            return max;
+        }, 0);
+
+        console.log("max value max", output5);
+    </script>
+  </body>
+</html>
