@@ -30,6 +30,7 @@ body {
 }
 
 .form-control {
+  width: 100%;
   width: 300px;
   height: 48px;
   padding: 0px 15px;
@@ -91,4 +92,19 @@ body {
 .entered-items p span {
   color: red;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .clear-sec button {
+    width: auto;
+  }
+  .entered-items p {
+    width: auto;
+  }
+  .form-control {
+    width: auto;
+  }
+  .Shopping-list-main {
+    width: 90%;
+  }
 }
