@@ -5,6 +5,12 @@ import {
 } from "../../data/deliveryOptions.js";
 import { productsList } from "../../data/products.js";
 import { formatCurrency } from "../utils/utils.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
+
+// Main idea of javascript
+// 1. save the data.
+// 2. Generate the HTML
+// 3. Make it interactive
 
 export function orderSummary() {
   let checkoutItems;
@@ -20,8 +26,8 @@ export function orderSummary() {
 
     checkoutItems += `
       <div class="cart-item-container js-cart-item-container-${
-        matchingProduct.id
-      }">
+          matchingProduct.id
+        }">
         <div class="delivery-date">
           Delivery date: ${dateString}
         </div>
@@ -68,10 +74,10 @@ export function orderSummary() {
     
     <div class="cart-item-container js-cart-item-container-${
       matchingProduct.id
-    }">
-      <div class="delivery-date">
-        Delivery date: ${dateString}
-      </div>
+      }">
+        <div class="delivery-date">
+          Delivery date: ${dateString}
+        </div>
     </div>`;
   }
 
@@ -79,7 +85,6 @@ export function orderSummary() {
   Cart.forEach((cartItems) => {
     const productId = cartItems.productId;
     const matchingProduct = productsList(productId);
-
     generateHtml(matchingProduct, cartItems);
     document.querySelector(".order-summary").innerHTML = checkoutItems;
   });
@@ -130,12 +135,17 @@ export function orderSummary() {
     link.addEventListener("click", () => {
       // the product we're trying to remove
       const productId = link.dataset.productId;
+      // update the cart with remaining items and return the cart;
       removeFromCart(productId);
+      // every element we get with dom has a method called .remove();
       const [container, containerOne] = document.querySelectorAll(
         `.js-cart-item-container-${productId}`
       );
       container.remove();
       containerOne.remove();
+
+      // regenarate all the html
+      renderPaymentSummary();
     });
   });
 
@@ -143,7 +153,10 @@ export function orderSummary() {
     element.addEventListener("click", () => {
       const { productId, deliveryoptionId } = element.dataset;
       updateDeliveryOption(productId, deliveryoptionId);
+      // inside the render summary function we can call render order summary again
+      // a function can call/ rerun itself and this feature is called recursion.
       orderSummary();
+      renderPaymentSummary();
     });
   });
 }

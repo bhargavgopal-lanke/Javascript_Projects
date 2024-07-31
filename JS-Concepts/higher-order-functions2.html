@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>higher order functions two</title>
+  </head>
+  <body>
+    <script>
+      const radius = [3, 2, 1, 4];
+
+      const area = (radius) => {
+        console.log("radius", radius);
+        return Math.PI * radius * radius;
+      };
+
+      const circumference = (radius) => {
+        return 2 * Math.PI * radius;
+      };
+
+      const daimeter = (radius) => {
+        return 2 * radius;
+      };
+
+      const calcualte = function (radius, logic) {
+        const output = [];
+        for (let i = 0; i < radius.length; i++) {
+          output.push(logic(radius[i]));
+        }
+        return output;
+      };
+
+      
+      console.log("area", calcualte(radius, area));
+      console.log("circumference", calcualte(radius, circumference));
+      console.log("daimeter", calcualte(radius, daimeter));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map flter reduce methods</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        {
+          firstName: "bhargav",
+          lastName: "gopal",
+          Age: 26,
+        },
+        {
+          firstName: "Prabhas",
+          lastName: "Salaar",
+          Age: 48,
+        },
+        {
+          firstName: "Nick",
+          lastName: "Joe",
+          Age: 48,
+        },
+        {
+          firstName: "Elon Musk",
+          lastName: "SpaceX",
+          Age: 48,
+        },
+        {
+          firstName: "Mustang",
+          lastName: "Ford",
+          Age: 26,
+        },
+      ];
+
+      // get the list of full names from the above array.
+
+      const result = users.filter((x) => x.firstName === "bhargav");
+
+      const result1 = users.map((x) => x.firstName + " " + x.lastName);
+      console.log("filter", result);
+      console.log("map", result1);
+
+      // get the list of people whose age is less than 30.
+      // we can chain map filter methods using chaining.
+      // we filtered out the list where users age is less than 30.
+      const ageList = users.filter((x) => x.Age < 30);
+      const firstMapName = ageList.map((y) => y.firstName);
+      console.log("ageList using filter method", ageList);
+      console.log("firstMapName using map method", firstMapName);
+
+      // get the users list where age is less than 30 using reduce method.
+
+      let reduceAgeResult = users.reduce((acc, curr) => {
+        if (curr.Age < 30) {
+          acc.push(curr.firstName);
+        }
+        return acc;
+      }, []);
+
+      console.log("reduceAgeResult", reduceAgeResult);
+
+      // reduce method will run through each and every value in the array.
+      const reduceResult = users.reduce((acc, curr) => {
+        if (acc[curr.Age]) {
+          acc[curr.Age] = ++acc[curr.Age];
+        } else {
+          // if acc of age is not present we just put 1 inside it.
+          acc[curr.Age] = 1;
+        }
+
+        return acc;
+      }, {});
+
+      console.log("reduce result", reduceResult);
+    </script>
+  </body>
+</html>
