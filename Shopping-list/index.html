@@ -4,9 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping list</title>
-    <link href="./css/custom.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
   </head>
   <body>
+    <div class="Shopping-list-main">
+      <div class="logo-sec">
+        <div class="logo-heading">
+          <img src="./images/calendar-icon.avif" />
+          <h1>Shopping List</h1>
+        </div>
+        <input type="text" class="form-control" placeholder="Enter Item" />
+        <button type="button" class="btn-add">+ Add Items</button>
+      </div>
+
+      <div class="filter-sec">
+        <div class="filter-heading">
+          <h4>Filter Items</h4>
+        </div>
+        <div class="entered-items">
+          <p>Apples <span>x</span></p>
+        </div>
+      </div>
+      <div class="clear-sec">
+        <button type="button">Clear All</button>
+      </div>
+    </div>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>
