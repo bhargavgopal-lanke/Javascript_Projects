@@ -16,7 +16,7 @@ body {
   height: 100%;
 }
 
-.Shopping-list-main .logo-sec .logo-heading {
+.Shopping-list-main .logo-heading {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -24,13 +24,12 @@ body {
   margin-bottom: 30px;
 }
 
-.Shopping-list-main .logo-sec .logo-heading img {
+.Shopping-list-main .logo-heading img {
   width: 50px;
   height: 50px;
 }
 
 .form-control {
-  width: 100%;
   width: 300px;
   height: 48px;
   padding: 0px 15px;
