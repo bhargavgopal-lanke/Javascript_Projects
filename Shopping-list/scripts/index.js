@@ -5,20 +5,26 @@
 
 // get all the inputs
 
-let addItemsArray = [];
+let addItemsArray = ["Bhargav", "Gopal", "web developer"];
 
+let inputFieldValue = document.querySelector("#item-value").value;
 function addItems() {
   let inputFieldValue = document.querySelector("#item-value").value;
   let displayValueField = document.querySelector("#entered-value");
-  addItemsArray.push(inputFieldValue);
 
+  
   let html = "";
+  if (inputFieldValue.length > 1) {
+    addItemsArray.push(inputFieldValue);
+  }
   addItemsArray.forEach((item) => {
     html += `<p class="">${item} <span>x</span></p>`;
   });
   displayValueField.innerHTML = html;
   document.getElementById("item-value").value = "";
 }
+
+addItems();
 
 // set the array val to empty to delete all the items
 
