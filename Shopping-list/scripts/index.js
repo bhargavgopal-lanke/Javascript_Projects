@@ -8,8 +8,8 @@
 let addItemsArray = [];
 
 function addItems() {
-  let inputFieldValue = document.getElementById("item-value").value;
-  let displayValueField = document.getElementById("entered-value");
+  let inputFieldValue = document.querySelector("#item-value").value;
+  let displayValueField = document.querySelector("#entered-value");
   addItemsArray.push(inputFieldValue);
 
   let html = "";
