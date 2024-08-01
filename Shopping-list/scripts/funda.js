@@ -57,7 +57,7 @@ let ul = document.querySelector("ul").appendChild(div);
 // div.appendChild(text);
 
 // create list item
-
+// quick and dirty way
 function createListItem(item) {
   const li = document.createElement("li");
 
@@ -66,4 +66,21 @@ function createListItem(item) {
   document.querySelector(".parent").appendChild(li);
 }
 
-createListItem('eggs');
+createListItem("eggs");
+
+// creating the list item in a clean and performant way
+
+function createCleanListItem(item) {
+  const button = document.createElement("button");
+  button.className = "Test";
+  button.innerText = "x"
+  const li = document.createElement("li");
+  li.appendChild(document.createTextNode(item))
+  li.appendChild(button);
+  document
+    .querySelector(".parent")
+    .appendChild(li);
+
+}
+
+createCleanListItem("cheese");
