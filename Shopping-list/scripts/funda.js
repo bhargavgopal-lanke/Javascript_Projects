@@ -21,3 +21,5 @@ const secondItem = document.querySelector("entered-value");
 
 secondItem.innerText = "Apple Juice";
 secondItem.style.color = "red";
+
+// if we want to select all the items we select querySelectorAll()
