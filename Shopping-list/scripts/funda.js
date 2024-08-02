@@ -71,16 +71,35 @@ createListItem("eggs");
 // creating the list item in a clean and performant way
 
 function createCleanListItem(item) {
-  const button = document.createElement("button");
-  button.className = "Test";
-  button.innerText = "x"
-  const li = document.createElement("li");
-  li.appendChild(document.createTextNode(item))
+  const button = createButton();
+  const li = createNewListItem(item);
   li.appendChild(button);
-  document
-    .querySelector(".parent")
-    .appendChild(li);
-
+  let allLists = document.querySelectorAll("li");
+  let listAllItems;
+  allLists.forEach((listItem) => {
+    listAllItems += listItem.setAttribute("style", "padding: 15px");
+  });
+  console.log("listAllItems", listAllItems);
+  document.querySelector(".parent").appendChild(li);
 }
 
 createCleanListItem("cheese");
+
+function createButton() {
+  const button = document.createElement("button");
+  button.className = "btn btn-styling";
+  button.innerText = "xml";
+  button.style.padding = "5px 15px";
+
+  return button;
+}
+
+function createNewListItem(item) {
+  const li = document.createElement("li");
+  li.className = "li list-li";
+  li.appendChild(document.createTextNode(item));
+  li.style.padding = "15px 0";
+  return li;
+}
+
+
