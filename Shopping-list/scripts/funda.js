@@ -152,6 +152,22 @@ function replaceFirstItem() {
 
 replaceFirstItem();
 
+// replace all items
+
+function replaceAllItems() {
+  const li = document.querySelectorAll("li");
+
+  li.forEach((item, index) => {
+    if (index === 2) {
+      item.innerText = "two";
+    } else {
+      item.innerText = "Replace All";
+    }
+  });
+}
+
+replaceAllItems();
+
 // replace something in the html
 
 function replaceHeading() {
