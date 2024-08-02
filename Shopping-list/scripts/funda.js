@@ -130,16 +130,16 @@ function insertBeforeItem() {
 
 // insert after example
 
-function insertAfter() {
-  // new element to insert
-  const li = document.createElement("li");
-  li.innerText = "Insert text After the selected element";
-  // esisting element to insert after
-  const firstItem = document.querySelector("li:first-child");
-  firstItem.parentElement.insertBefore(li, firstItem.nextSibling);
-}
+// function insertAfter() {
+//   // new element to insert
+//   const li = document.createElement("li");
+//   li.innerText = "Insert text After the selected element";
+//   // esisting element to insert after
+//   const firstItem = document.querySelector("li:first-child");
+//   firstItem.parentElement.insertBefore(li, firstItem.nextSibling);
+// }
 
-insertAfter();
+// insertAfter();
 
 // replace something in the html
 
@@ -148,9 +148,32 @@ function replaceHeading() {
   const h1 = document.querySelector(".header h1");
 
   const h2 = document.createElement("h2");
-  h2.textContent = `Shoopinng List`;
+  h2.innerHTML = `Shopping List`;
   h2.id = "app-title";
   header.replaceChild(h2, h1);
 }
 
 replaceHeading();
+
+//  clear button example
+
+function removeClearButton() {
+  const clearBtn = document.querySelector("#clear");
+  clearBtn.remove();
+}
+
+function removeFirstItem(itemNumber) {
+  const ul = document.querySelector("ul");
+  const li = document.querySelector(`li:nth-child(${itemNumber})`);
+  ul.removeChild(li);
+}
+
+function remooveListItem3(itemNumber) {
+  const li = document.querySelectorAll("li");
+  // remove the items not based on zero index.
+  li[itemNumber - 1].remove();
+}
+
+removeClearButton();
+// removeFirstItem(5);
+remooveListItem3(3)
