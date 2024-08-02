@@ -102,4 +102,15 @@ function createNewListItem(item) {
   return li;
 }
 
+// insertAdjacentElement Example
 
+function insertElement() {
+  const filter = document.querySelector(".parent");
+
+  const h1 = document.createElement("h1");
+  h1.innerText = "insertAdjacentElement text";
+  // this takes two parameters where to add and what to add
+  filter.insertAdjacentElement("beforebegin", h1);
+}
+
+insertElement();
