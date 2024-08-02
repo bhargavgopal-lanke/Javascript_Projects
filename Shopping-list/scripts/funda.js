@@ -114,3 +114,18 @@ function insertElement() {
 }
 
 insertElement();
+
+
+
+// insertBefore Example
+
+function insertBeforeItem() {
+
+  const ul = document.querySelector('ul');
+  const li = document.createElement('li');
+  li.textContent ="insert   Before";
+  
+  const thirdItem = document.querySelector('li:nth-child(3)');
+  ul.insertBefore(li, thirdItem)
+
+}
