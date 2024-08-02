@@ -115,17 +115,28 @@ function insertElement() {
 
 insertElement();
 
-
-
 // insertBefore Example
 
 function insertBeforeItem() {
+  const ul = document.querySelector("ul");
+  const li = document.createElement("li");
+  li.textContent = "insert   Before";
 
-  const ul = document.querySelector('ul');
-  const li = document.createElement('li');
-  li.textContent ="insert   Before";
-  
-  const thirdItem = document.querySelector('li:nth-child(3)');
-  ul.insertBefore(li, thirdItem)
-
+  const thirdItem = document.querySelector("li:nth-child(3)");
+  ul.insertBefore(li, thirdItem);
 }
+
+// insert the element challenge
+
+// insert after example
+
+function insertAfter() {
+  // new element to insert
+  const li = document.createElement("li");
+  li.innerText = "Insert text After the selected element";
+  // esisting element to insert after
+  const firstItem = document.querySelector("li:first-child");
+  firstItem.parentElement.insertBefore(li, firstItem.nextSibling);
+}
+
+insertAfter()
