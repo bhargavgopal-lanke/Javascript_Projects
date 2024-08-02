@@ -7,8 +7,6 @@
 
 let addItemsArray = ["Bhargav", "Gopal", "web developer"];
 
-let inputFieldValue = document.querySelector("#item-value").value;
-
 function addItems() {
   let inputFieldValue = document.querySelector("#item-value").value;
   let displayValueField = document.querySelector("#entered-value");
