@@ -139,4 +139,18 @@ function insertAfter() {
   firstItem.parentElement.insertBefore(li, firstItem.nextSibling);
 }
 
-insertAfter()
+insertAfter();
+
+// replace something in the html
+
+function replaceHeading() {
+  const header = document.querySelector(".header");
+  const h1 = document.querySelector(".header h1");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = `Shoopinng List`;
+  h2.id = "app-title";
+  header.replaceChild(h2, h1);
+}
+
+replaceHeading();
