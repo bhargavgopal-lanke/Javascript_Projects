@@ -150,6 +150,8 @@ function replaceFirstItem() {
   firstItem.replaceWith(li);
 }
 
+replaceFirstItem();
+
 // replace something in the html
 
 function replaceHeading() {
