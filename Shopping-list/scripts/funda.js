@@ -141,6 +141,15 @@ function insertBeforeItem() {
 
 // insertAfter();
 
+// replace first item
+
+function replaceFirstItem() {
+  const firstItem = document.querySelector("li:first-child");
+  const li = document.createElement("li");
+  li.innerText = "Replace text with first child";
+  firstItem.replaceWith(li);
+}
+
 // replace something in the html
 
 function replaceHeading() {
@@ -176,4 +185,4 @@ function remooveListItem3(itemNumber) {
 
 removeClearButton();
 // removeFirstItem(5);
-remooveListItem3(3)
+remooveListItem3(3);
