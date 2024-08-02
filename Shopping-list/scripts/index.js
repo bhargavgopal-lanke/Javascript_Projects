@@ -6,9 +6,6 @@
 // get all the inputs
 
 let addItemsArray = ["Bhargav", "Gopal", "web developer"];
-let inputFieldValue = document.querySelector("#item-value").value;
-
-let addItemsArray = [];
 
 function addItems() {
   let inputFieldValue = document.querySelector("#item-value").value;
