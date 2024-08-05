@@ -252,6 +252,9 @@ const onMouseUp = () => console.log("mouseup event");
 // on mouse wheel event
 const onMouseWheel = () => console.log("wheel event");
 
+// on mouse wheel event
+const onMouseOver = () => console.log("mouseover event");
+
 // Event Listeners
 // add the event listeners to the logo image for onclick
 // in the addEventListener we don't have to call the function directly if we're writing the code in an single line
@@ -266,3 +269,5 @@ logo.addEventListener("mousedown", onMouseDown);
 logo.addEventListener("mouseup", onMouseUp);
 // mousewheel event listener
 logo.addEventListener("wheel", onMouseWheel);
+// mouseover event listener
+logo.addEventListener("mouseover", onMouseOver);
