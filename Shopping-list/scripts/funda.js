@@ -286,3 +286,10 @@ logo.addEventListener("mouseover", onDragStart);
 logo.addEventListener("mouseover", onDrag);
 // mouseover event listener
 logo.addEventListener("mouseover", onDragEnd);
+
+
+// target and currentTarget event
+// `target` - the element that triggered the event
+// `currentTarget` - the element that the event listener is attached to
+// `type` - the type of event that was triggered.
+// `timeStamp` - the time that event was triggered.
