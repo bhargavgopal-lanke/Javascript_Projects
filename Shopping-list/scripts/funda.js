@@ -224,7 +224,7 @@ const logo = document.querySelector("img");
 
 // on click console the event is triggered.
 const onClick = () => {
-  console.log("event clicked");
+  console.log("click event triggered");
 };
 
 //on dblclick change the background color to purple and color to white and toggle this
@@ -236,20 +236,21 @@ const onDoubleClick = () => {
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black";
   }
+  console.log("dblclick event");
 };
 
 const onRightClick = () => {
-  console.log("right click event");
+  console.log("right click aka 'contextmenu' event");
 };
 
 // on mouse down event
-const onMouseDown = () => console.log("on mouse down");
+const onMouseDown = () => console.log("mousedown event");
 
 // on mouse up event
-const onMouseUp = () => console.log("On mouse up");
+const onMouseUp = () => console.log("mouseup event");
 
 // on mouse wheel event
-const onMouseWheel = () => console.log("On mouse wheel");
+const onMouseWheel = () => console.log("wheel event");
 
 // Event Listeners
 // add the event listeners to the logo image for onclick
