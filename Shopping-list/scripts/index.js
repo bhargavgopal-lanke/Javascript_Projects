@@ -21,7 +21,7 @@ function addItems() {
   document.getElementById("item-value").value = "";
 }
 
-addItems();
+// addItems();
 
 // set the array val to empty to delete all the items
 
@@ -49,3 +49,25 @@ logo.addEventListener("dragstart", (e) => {
 logo.addEventListener("dragend", (e) => {
   onDrag1(e);
 });
+
+const itemInput = document.getElementById("item-value");
+
+const onKeyPress = (e) => {
+  if (e.keyCode === 13) {
+    alert("you pressed enter");
+  }
+
+  //code
+  if (e.code === "Digit2") {
+    console.log("you pressed 1");
+  }
+
+  if (e.repeat) {
+    console.log("You are holding down " + e.key);
+  }
+
+  const inputValue = e.target.value;
+  console.log("inputValue", inputValue);
+};
+
+itemInput.addEventListener("keydown", onKeyPress);
