@@ -242,6 +242,12 @@ const onRightClick = () => {
   console.log("right click event");
 };
 
+// on mouse down event
+const onMouseDown = () => console.log("on mouse down");
+
+// on mouse up event
+const onMouseUp = () => console.log("On mouse up");
+
 // Event Listeners
 // add the event listeners to the logo image for onclick
 // in the addEventListener we don't have to call the function directly if we're writing the code in an single line
@@ -250,3 +256,7 @@ logo.addEventListener("click", onClick);
 logo.addEventListener("dblclick", onDoubleClick);
 // on rightClick call this event 'contextmenu'
 logo.addEventListener("contextmenu", onRightClick);
+// mousedown event listener
+logo.addEventListener("mousedown", onMouseDown);
+// mouseup event listener
+logo.addEventListener("mouseup", onMouseUp);
