@@ -186,6 +186,7 @@ replaceHeading();
 
 function removeClearButton() {
   const clearBtn = document.querySelector("#clear");
+  // using remove method we can delete an item in the dom
   clearBtn.remove();
 }
 
@@ -204,3 +205,17 @@ function remooveListItem3(itemNumber) {
 removeClearButton();
 // removeFirstItem(5);
 remooveListItem3(3);
+
+const clearBtn = document.querySelector("#clear");
+function onClear() {
+  const itemList = document.querySelector("ul");
+  const items = document.querySelectorAll("li");
+  // this below line will empty the item list
+  // itemList.innerHTML = "";
+  // removing all the items from the list array
+  items.forEach((item) => item.remove());
+}
+
+clearBtn.addEventListener("click", () => {
+  onClear();
+});
