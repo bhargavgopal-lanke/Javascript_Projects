@@ -29,3 +29,23 @@ function deleteAllItems() {
   addItemsArray = [];
   addItems();
 }
+
+document.querySelector("a").addEventListener("click", (e) => {
+  // this is stopping the link to jump to google page
+  e.preventDefault();
+  console.log("Link was created");
+});
+
+function onDrag1(e) {
+  document.querySelector("h1").textContent = `X ${e.clientX} Y ${e.clientY}`;
+}
+
+const logo = document.querySelector("img");
+
+logo.addEventListener("dragstart", (e) => {
+  onDrag1(e);
+});
+
+logo.addEventListener("dragend", (e) => {
+  onDrag1(e);
+});
