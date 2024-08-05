@@ -227,7 +227,7 @@ const onClick = () => {
   console.log("event clicked");
 };
 
-//on dblclick change the background color to purple and color to white and toggle this 
+//on dblclick change the background color to purple and color to white and toggle this
 const onDoubleClick = () => {
   if (document.body.style.backgroundColor !== "purple") {
     document.body.style.backgroundColor = "purple";
@@ -238,11 +238,15 @@ const onDoubleClick = () => {
   }
 };
 
+const onRightClick = () => {
+  console.log("right click event");
+};
+
+// Event Listeners
 // add the event listeners to the logo image for onclick
-logo.addEventListener("click", () => {
-  onClick();
-});
+// in the addEventListener we don't have to call the function directly if we're writing the code in an single line
+logo.addEventListener("click", onClick);
 // add the event listeners to the logo image for dblclick
-logo.addEventListener("dblclick", () => {
-  onDoubleClick();
-});
+logo.addEventListener("dblclick", onDoubleClick);
+// on rightClick call this event 'contextmenu'
+logo.addEventListener("contextmenu", onRightClick);
