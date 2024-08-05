@@ -293,3 +293,14 @@ logo.addEventListener("mouseover", onDragEnd);
 // `currentTarget` - the element that the event listener is attached to
 // `type` - the type of event that was triggered.
 // `timeStamp` - the time that event was triggered.
+
+function onClick3(e) {
+  console.log("e target", e.target);
+  // current target represents the event listener it's attached to.
+  console.log("e target", e.currentTarget);
+}
+
+// logo.addEventListener("click", onClick3);
+document.body.addEventListener("click", (e) => {
+  onClick3(e);
+});
