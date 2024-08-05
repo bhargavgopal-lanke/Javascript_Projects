@@ -255,6 +255,15 @@ const onMouseWheel = () => console.log("wheel event");
 // on mouse wheel event
 const onMouseOver = () => console.log("mouseover event");
 
+// on drag start event
+const onDragStart = () => console.log("drag start event");
+
+// on drag event
+const onDrag = () => console.log("Drag event");
+
+// on drag end event
+const onDragEnd = () => console.log("Drag end event");
+
 // Event Listeners
 // add the event listeners to the logo image for onclick
 // in the addEventListener we don't have to call the function directly if we're writing the code in an single line
@@ -271,3 +280,9 @@ logo.addEventListener("mouseup", onMouseUp);
 logo.addEventListener("wheel", onMouseWheel);
 // mouseover event listener
 logo.addEventListener("mouseover", onMouseOver);
+// mouseover event listener
+logo.addEventListener("mouseover", onDragStart);
+// mouseover event listener
+logo.addEventListener("mouseover", onDrag);
+// mouseover event listener
+logo.addEventListener("mouseover", onDragEnd);
