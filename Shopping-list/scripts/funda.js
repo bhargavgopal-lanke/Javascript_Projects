@@ -281,12 +281,11 @@ logo.addEventListener("wheel", onMouseWheel);
 // mouseover event listener
 logo.addEventListener("mouseover", onMouseOver);
 // mouseover event listener
-logo.addEventListener("mouseover", onDragStart);
+logo.addEventListener("drag", onDragStart);
 // mouseover event listener
-logo.addEventListener("mouseover", onDrag);
+logo.addEventListener("dragstart", onDrag);
 // mouseover event listener
-logo.addEventListener("mouseover", onDragEnd);
-
+logo.addEventListener("dragend", onDragEnd);
 
 // target and currentTarget event
 // `target` - the element that triggered the event
