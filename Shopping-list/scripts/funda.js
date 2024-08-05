@@ -202,11 +202,11 @@ function remooveListItem3(itemNumber) {
   li[itemNumber - 1].remove();
 }
 
-removeClearButton();
+// removeClearButton();
 // removeFirstItem(5);
 remooveListItem3(3);
 
-const clearBtn = document.querySelector("#clear");
+const clearBtn1 = document.querySelector("#clear");
 function onClear() {
   const itemList = document.querySelector("ul");
   const items = document.querySelectorAll("li");
@@ -216,6 +216,33 @@ function onClear() {
   items.forEach((item) => item.remove());
 }
 
-clearBtn.addEventListener("click", () => {
+clearBtn1.addEventListener("click", () => {
   onClear();
+});
+
+const logo = document.querySelector("img");
+
+// on click console the event is triggered.
+const onClick = () => {
+  console.log("event clicked");
+};
+
+//on dblclick change the background color to purple and color to white and toggle this 
+const onDoubleClick = () => {
+  if (document.body.style.backgroundColor !== "purple") {
+    document.body.style.backgroundColor = "purple";
+    document.body.style.color = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+  }
+};
+
+// add the event listeners to the logo image for onclick
+logo.addEventListener("click", () => {
+  onClick();
+});
+// add the event listeners to the logo image for dblclick
+logo.addEventListener("dblclick", () => {
+  onDoubleClick();
 });
