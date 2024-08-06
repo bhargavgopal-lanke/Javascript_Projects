@@ -21,8 +21,6 @@ function addItems() {
   document.getElementById("item-value").value = "";
 }
 
-// addItems();
-
 // set the array val to empty to delete all the items
 
 function deleteAllItems() {
