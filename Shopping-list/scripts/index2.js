@@ -8,6 +8,10 @@ function onInput(e) {
   heading1.textContent = e.target.value;
 }
 
+
+console.log(test)
+
+
 function onChecked(e) {
   console.log("checked boolean", e.target.checked);
   const checkedValue = e.target.checked;
