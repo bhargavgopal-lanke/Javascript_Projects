@@ -30,11 +30,11 @@ function deleteAllItems() {
   addItems();
 }
 
-document.querySelector("a").addEventListener("click", (e) => {
-  // this is stopping the link to jump to google page
-  e.preventDefault();
-  console.log("Link was created");
-});
+// document.querySelector("a").addEventListener("click", (e) => {
+//   // this is stopping the link to jump to google page
+//   e.preventDefault();
+//   console.log("Link was created");
+// });
 
 function onDrag1(e) {
   document.querySelector("h1").textContent = `X ${e.clientX} Y ${e.clientY}`;
