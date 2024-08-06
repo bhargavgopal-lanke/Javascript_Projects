@@ -21,7 +21,7 @@ function addItems() {
   document.getElementById("item-value").value = "";
 }
 
-addItems();
+// addItems();
 
 // set the array val to empty to delete all the items
 
@@ -29,3 +29,45 @@ function deleteAllItems() {
   addItemsArray = [];
   addItems();
 }
+
+// document.querySelector("a").addEventListener("click", (e) => {
+//   // this is stopping the link to jump to google page
+//   e.preventDefault();
+//   console.log("Link was created");
+// });
+
+function onDrag1(e) {
+  document.querySelector("h1").textContent = `X ${e.clientX} Y ${e.clientY}`;
+}
+
+const logo = document.querySelector("img");
+
+logo.addEventListener("dragstart", (e) => {
+  onDrag1(e);
+});
+
+logo.addEventListener("dragend", (e) => {
+  onDrag1(e);
+});
+
+const itemInput = document.getElementById("item-value");
+
+const onKeyPress = (e) => {
+  if (e.keyCode === 13) {
+    alert("you pressed enter");
+  }
+
+  //code
+  if (e.code === "Digit2") {
+    console.log("you pressed 1");
+  }
+
+  if (e.repeat) {
+    console.log("You are holding down " + e.key);
+  }
+
+  const inputValue = e.target.value;
+  console.log("inputValue", inputValue);
+};
+
+itemInput.addEventListener("keydown", onKeyPress);

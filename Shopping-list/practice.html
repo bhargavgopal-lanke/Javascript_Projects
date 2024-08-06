@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      .card {
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        padding: 15px;
+      }
+
+      .dark {
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -18,13 +34,14 @@
         </p>
 
         <ul>
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-            <li>item 4</li>
-            <li>item 5</li>
+          <li class="item-list">item 1</li>
+          <li class="item-list">item 2</li>
+          <li class="item-list">item 3</li>
+          <li class="item-list">item 4</li>
+          <li class="item-list">item 5</li>
         </ul>
-        <button>Run</button>
+        <button type="button" id="clear" onclick="run()">Run</button>
+        <button type="button" id="clearAll" onclick="run1()">Clear All</button>
       </div>
     </div>
 

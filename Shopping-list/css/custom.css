@@ -29,13 +29,24 @@ body {
   height: 50px;
 }
 
+.form-group {
+  max-width: 300px;
+}
+
 .form-control {
-  width: 300px;
-  height: 48px;
-  padding: 0px 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
   display: block;
+  width: 100%;
+  padding-inline: 0;
+  padding-block: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 15px;
 }
 
 .btn-add {
@@ -47,6 +58,7 @@ body {
   outline: none;
   cursor: pointer;
   margin-top: 10px;
+  display: block;
 }
 
 .filter-sec {
@@ -102,9 +114,11 @@ body {
     width: auto;
   }
   .form-control {
-    width: auto;
+    width: 95%;
+    margin: 0 auto 15px;
   }
   .Shopping-list-main {
     width: 90%;
   }
 }
+

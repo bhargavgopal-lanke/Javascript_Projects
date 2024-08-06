@@ -141,6 +141,33 @@ function insertBeforeItem() {
 
 // insertAfter();
 
+// replace first item
+
+function replaceFirstItem() {
+  const firstItem = document.querySelector("li:first-child");
+  const li = document.createElement("li");
+  li.innerText = "Replace text with first child";
+  firstItem.replaceWith(li);
+}
+
+replaceFirstItem();
+
+// replace all items
+
+function replaceAllItems() {
+  const li = document.querySelectorAll("li");
+
+  li.forEach((item, index) => {
+    if (index === 2) {
+      item.innerText = "two";
+    } else {
+      item.innerText = "Replace All";
+    }
+  });
+}
+
+replaceAllItems();
+
 // replace something in the html
 
 function replaceHeading() {
@@ -159,6 +186,7 @@ replaceHeading();
 
 function removeClearButton() {
   const clearBtn = document.querySelector("#clear");
+  // using remove method we can delete an item in the dom
   clearBtn.remove();
 }
 
@@ -174,6 +202,104 @@ function remooveListItem3(itemNumber) {
   li[itemNumber - 1].remove();
 }
 
-removeClearButton();
+// removeClearButton();
 // removeFirstItem(5);
-remooveListItem3(3)
+remooveListItem3(3);
+
+const clearBtn1 = document.querySelector("#clear");
+function onClear() {
+  const itemList = document.querySelector("ul");
+  const items = document.querySelectorAll("li");
+  // this below line will empty the item list
+  // itemList.innerHTML = "";
+  // removing all the items from the list array
+  items.forEach((item) => item.remove());
+}
+
+clearBtn1.addEventListener("click", () => {
+  onClear();
+});
+
+const logo = document.querySelector("img");
+
+// on click console the event is triggered.
+const onClick = () => {
+  console.log("click event triggered");
+};
+
+//on dblclick change the background color to purple and color to white and toggle this
+const onDoubleClick = () => {
+  if (document.body.style.backgroundColor !== "purple") {
+    document.body.style.backgroundColor = "purple";
+    document.body.style.color = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+  }
+  console.log("dblclick event");
+};
+
+const onRightClick = () => {
+  console.log("right click aka 'contextmenu' event");
+};
+
+// on mouse down event
+const onMouseDown = () => console.log("mousedown event");
+
+// on mouse up event
+const onMouseUp = () => console.log("mouseup event");
+
+// on mouse wheel event
+const onMouseWheel = () => console.log("wheel event");
+
+// on mouse wheel event
+const onMouseOver = () => console.log("mouseover event");
+
+// on drag start event
+const onDragStart = () => console.log("drag start event");
+
+// on drag event
+const onDrag = () => console.log("Drag event");
+
+// on drag end event
+const onDragEnd = () => console.log("Drag end event");
+
+// Event Listeners
+// add the event listeners to the logo image for onclick
+// in the addEventListener we don't have to call the function directly if we're writing the code in an single line
+logo.addEventListener("click", onClick);
+// add the event listeners to the logo image for dblclick
+logo.addEventListener("dblclick", onDoubleClick);
+// on rightClick call this event 'contextmenu'
+logo.addEventListener("contextmenu", onRightClick);
+// mousedown event listener
+logo.addEventListener("mousedown", onMouseDown);
+// mouseup event listener
+logo.addEventListener("mouseup", onMouseUp);
+// mousewheel event listener
+logo.addEventListener("wheel", onMouseWheel);
+// mouseover event listener
+logo.addEventListener("mouseover", onMouseOver);
+// mouseover event listener
+logo.addEventListener("drag", onDragStart);
+// mouseover event listener
+logo.addEventListener("dragstart", onDrag);
+// mouseover event listener
+logo.addEventListener("dragend", onDragEnd);
+
+// target and currentTarget event
+// `target` - the element that triggered the event
+// `currentTarget` - the element that the event listener is attached to
+// `type` - the type of event that was triggered.
+// `timeStamp` - the time that event was triggered.
+
+function onClick3(e) {
+  console.log("e target", e.target);
+  // current target represents the event listener it's attached to.
+  console.log("e target", e.currentTarget);
+}
+
+// logo.addEventListener("click", onClick3);
+document.body.addEventListener("click", (e) => {
+  onClick3(e);
+});
