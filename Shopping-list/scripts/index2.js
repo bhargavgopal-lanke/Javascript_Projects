@@ -1,16 +1,22 @@
 let inputField = document.querySelector("#item-value");
-let displayValueField = document.querySelector("#entered-value");
 let priorityInput = document.querySelector("#priority-input");
 let checkbox = document.querySelector("#checkbox");
 let heading1 = document.querySelector("h1");
+let form = document.getElementById("item-form");
+let displayValueField = document.querySelector("#entered-value");
+
+function onSubmit(e) {
+  e.preventDefault();
+  const inputField = document.querySelector("#item-value");
+  const priorityInput = document.querySelector("#priority-input");
+  console.log(inputField, priorityInput);
+}
+
+form.addEventListener("submit", onSubmit);
 
 function onInput(e) {
   heading1.textContent = e.target.value;
 }
-
-
-console.log(test)
-
 
 function onChecked(e) {
   console.log("checked boolean", e.target.checked);
@@ -29,12 +35,9 @@ function onBlur() {
   inputField.style.backgroundColor = "red";
 }
 
-checkbox.addEventListener("click", (e) => {
-  onChecked(e);
-});
-
-inputField.addEventListener("input", onInput);
-priorityInput.addEventListener("change", onInput);
-checkbox.addEventListener("input", onChecked);
-inputField.addEventListener("focus", onFocus);
-inputField.addEventListener("blur", onBlur);
+// checkbox.addEventListener("click", onChecked);
+// inputField.addEventListener("input", onInput);
+// priorityInput.addEventListener("change", onInput);
+// checkbox.addEventListener("input", onChecked);
+// inputField.addEventListener("focus", onFocus);
+// inputField.addEventListener("blur", onBlur);

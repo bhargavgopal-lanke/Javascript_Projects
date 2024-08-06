@@ -40,13 +40,13 @@ function onDrag1(e) {
 
 const logo = document.querySelector("img");
 
-logo.addEventListener("dragstart", (e) => {
-  onDrag1(e);
-});
+// logo.addEventListener("dragstart", (e) => {
+//   onDrag1(e);
+// });
 
-logo.addEventListener("dragend", (e) => {
-  onDrag1(e);
-});
+// logo.addEventListener("dragend", (e) => {
+//   onDrag1(e);
+// });
 
 const itemInput = document.getElementById("item-value");
 
@@ -68,4 +68,4 @@ const onKeyPress = (e) => {
   console.log("inputValue", inputValue);
 };
 
-itemInput.addEventListener("keydown", onKeyPress);
+// itemInput.addEventListener("keydown", onKeyPress);
