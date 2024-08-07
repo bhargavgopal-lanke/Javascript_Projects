@@ -6,10 +6,10 @@ let form = document.getElementById("item-form");
 let displayValueField = document.querySelector("#entered-value");
 
 function onSubmit(e) {
-  e.preventDefault();
-  const inputField = document.querySelector("#item-value");
-  const priorityInput = document.querySelector("#priority-input");
-  console.log(inputField, priorityInput);
+  // e.preventDefault();
+  const inputField = document.querySelector("#item-value").value;
+  const priorityInput = document.querySelector("#priority-input").value;
+  console.log("submit values", inputField, priorityInput);
 }
 
 form.addEventListener("submit", onSubmit);
