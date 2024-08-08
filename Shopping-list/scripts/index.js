@@ -95,11 +95,19 @@ const onKeyPress = (e) => {
 // instead of window.load we can use window.addEventListener load
 // load event waits for the entire page to load including all resourses
 window.addEventListener("load", () => {
-  document.querySelector("li").textContent = "hello world";
+  document.querySelectorAll("li")[0].textContent = "hello world";
 });
 
 // DOMcontentLoaded is loaded as soon as the DOM is parsed and loaded
 
 window.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("h1").textContent = "Hello Bhargav";
+  document.querySelectorAll("li")[1].textContent = "Hello Bhargav";
+});
+
+// window event resize
+// capture the window width on resize using resize method
+window.addEventListener("resize", () => {
+  document.querySelector(
+    "h1"
+  ).textContent = `Resized to ${window.innerWidth} X ${window.innerHeight}`;
 });
