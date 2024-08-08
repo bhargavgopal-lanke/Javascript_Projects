@@ -15,11 +15,29 @@ function addItems() {
     addItemsArray.push(inputFieldValue);
   }
   addItemsArray.forEach((item) => {
-    html += `<p class="">${item} <span>x</span></p>`;
+    html += `<p class="">${item} <span id="delete-item" data-delete-id="">x</span></p>`;
   });
   displayValueField.innerHTML = html;
   document.getElementById("item-value").value = "";
 }
+
+
+// delete the selected item
+document.querySelector("#btn-add-new").addEventListener("click", () => {
+  const listNewItem1 = document.querySelector("#entered-value");
+
+  // listNewItem1.forEach((items) => {
+  // console.log(">>>>", items.childNodes);
+  listNewItem1.addEventListener("click", (e) => {
+    console.log("event", e.target.tagName);
+    if (e.target.tagName === "P") {
+      e.target.remove();
+    }
+  });
+
+  // });
+});
+
 
 // set the array val to empty to delete all the items
 
@@ -40,13 +58,13 @@ function onDrag1(e) {
 
 const logo = document.querySelector("img");
 
-logo.addEventListener("dragstart", (e) => {
-  onDrag1(e);
-});
+// logo.addEventListener("dragstart", (e) => {
+//   onDrag1(e);
+// });
 
-logo.addEventListener("dragend", (e) => {
-  onDrag1(e);
-});
+// logo.addEventListener("dragend", (e) => {
+//   onDrag1(e);
+// });
 
 const itemInput = document.getElementById("item-value");
 
@@ -68,4 +86,22 @@ const onKeyPress = (e) => {
   console.log("inputValue", inputValue);
 };
 
-itemInput.addEventListener("keydown", onKeyPress);
+// itemInput.addEventListener("keydown", onKeyPress);
+
+// on load
+
+// window.load = function () {
+//   document.querySelector("h1").textContent = "Hello World";
+// };
+
+// instead of window.load we can use window.addEventListener load
+// load event waits for the entire page to load including all resourses
+window.addEventListener("load", () => {
+  document.querySelector("li").textContent = "hello world";
+});
+
+// DOMcontentLoaded is loaded as soon as the DOM is parsed and loaded
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("h1").textContent = "Hello Bhargav";
+});

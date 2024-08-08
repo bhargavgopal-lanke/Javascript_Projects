@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="Shopping-list-main">
-      <form>
+      <form id="item-form">
         <div class="logo-heading">
           <img src="./images/calendar-icon.avif" />
           <h1>Shopping List</h1>
@@ -35,9 +35,12 @@
           </select>
         </div>
         <input type="checkbox" id="checkbox" />
-        <button type="button" class="btn-add" onclick="addItems()">
+        <button type="button" id="btn-add-new" class="btn-add"
+         onclick="addItems()"
+         >
           + Add Items
         </button>
+     
       </form>
       <!-- <a href="https://www.google.com">Google</a>   -->
 
@@ -45,7 +48,14 @@
         <div class="filter-heading">
           <h4>Filter Items</h4>
         </div>
-        <div class="entered-items" id="entered-value"></div>
+        <div class="entered-items" id="entered-value">
+          <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+          </ul>
+        </div>
       </div>
       <div class="clear-sec">
         <button type="button" onclick="deleteAllItems()">Clear All</button>
