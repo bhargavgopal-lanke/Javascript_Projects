@@ -21,7 +21,6 @@ function addItems() {
   document.getElementById("item-value").value = "";
 }
 
-
 // delete the selected item
 document.querySelector("#btn-add-new").addEventListener("click", () => {
   const listNewItem1 = document.querySelector("#entered-value");
@@ -37,7 +36,6 @@ document.querySelector("#btn-add-new").addEventListener("click", () => {
 
   // });
 });
-
 
 // set the array val to empty to delete all the items
 
@@ -109,7 +107,17 @@ window.addEventListener("DOMContentLoaded", () => {
 // window event resize
 // capture the window width on resize using resize method
 window.addEventListener("resize", () => {
-  document.querySelector(
-    "h1"
-  ).textContent = `Resized to ${window.innerWidth} X ${window.innerHeight}`;
+  document.querySelectorAll(
+    "li"
+  )[2].textContent = `Resized to ${window.innerWidth} X ${window.innerHeight}`;
+});
+
+// on window scroll to height 70px add background color to the body
+
+window.addEventListener("scroll", () => {
+  console.log(`Scrolled ${window.scrollX} and ${window.scrollY}`);
+
+  if (window.scrollY > 70) {
+    document.body.style.backgroundColor = "black";
+  }
 });
