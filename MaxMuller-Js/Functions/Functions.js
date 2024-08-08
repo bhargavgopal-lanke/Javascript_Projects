@@ -15,6 +15,7 @@ const getPlayerChoice = function () {
 
   if (selection !== ROCK && selection !== PAPER && selection !== SCISSORS) {
     alert(`Invalid Choice! We Chose ${DEFAULT_CHOICE} for you`);
+    return DEFAULT_CHOICE;
   }
   return selection;
 };
