@@ -93,7 +93,13 @@ const onKeyPress = (e) => {
 // };
 
 // instead of window.load we can use window.addEventListener load
-
+// load event waits for the entire page to load including all resourses
 window.addEventListener("load", () => {
-  document.querySelector("h1").textContent = "hello world";
+  document.querySelector("li").textContent = "hello world";
+});
+
+// DOMcontentLoaded is loaded as soon as the DOM is parsed and loaded
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("h1").textContent = "Hello Bhargav";
 });
