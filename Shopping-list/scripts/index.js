@@ -119,5 +119,6 @@ window.addEventListener("scroll", () => {
 
   if (window.scrollY > 70) {
     document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
   }
 });
