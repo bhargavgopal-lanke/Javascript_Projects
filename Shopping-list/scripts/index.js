@@ -22,6 +22,7 @@ function addItems() {
 }
 
 
+
 // delete the selected item
 document.querySelector("#btn-add-new").addEventListener("click", () => {
   const listNewItem1 = document.querySelector("#entered-value");
@@ -37,6 +38,7 @@ document.querySelector("#btn-add-new").addEventListener("click", () => {
 
   // });
 });
+
 
 
 // set the array val to empty to delete all the items
