@@ -16,6 +16,10 @@ const getPlayerChoice = function () {
   if (selection !== ROCK && selection !== PAPER && selection !== SCISSORS) {
     alert(`Invalid Choice! We Chose ${DEFAULT_CHOICE} for you`);
   }
+  return selection;
 };
 
-startGameBtn.addEventListener("click", getPlayerChoice);
+startGameBtn.addEventListener("click", () => {
+  let playerChoiceResult = getPlayerChoice();
+  console.log("getPlayerChoice", playerChoiceResult);
+});
