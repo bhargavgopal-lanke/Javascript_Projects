@@ -19,7 +19,7 @@ const getPlayerChoice = () => {
 
   if (selection !== ROCK && selection !== PAPER && selection !== SCISSORS) {
     alert(`Invalid Choice! We Chose ${DEFAULT_CHOICE} for you`);
-    return DEFAULT_CHOICE;
+    return;
   }
   return selection;
 };
@@ -55,12 +55,18 @@ const getComputerChoice = () => {
   return computerResult;
 };
 
-
 // when start btn clicked call this function and return the result.
 const playGame = () => {
   const computerChoiceValue = getComputerChoice();
   const playerChoiceValue = getPlayerChoice();
-  let winner = getWinner(computerChoiceValue, playerChoiceValue);
+  let winner;
+
+  if (playerChoiceValue) {
+    winner = getWinner(computerChoiceValue, playerChoiceValue);
+  } else {
+    winner = getWinner(computerChoiceValue);
+  }
+
   let message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue},`;
 
   if (winner === RESULT_DRAW) {
