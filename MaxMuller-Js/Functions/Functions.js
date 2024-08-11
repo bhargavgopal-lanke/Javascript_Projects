@@ -54,6 +54,9 @@ const getComputerChoice = () => {
   }
   return computerResult;
 };
+
+
+// when start btn clicked call this function and return the result.
 const playGame = () => {
   const computerChoiceValue = getComputerChoice();
   const playerChoiceValue = getPlayerChoice();
