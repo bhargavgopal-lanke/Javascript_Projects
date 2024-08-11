@@ -58,14 +58,14 @@ const playGame = () => {
   const computerChoiceValue = getComputerChoice();
   const playerChoiceValue = getPlayerChoice();
   let winner = getWinner(computerChoiceValue, playerChoiceValue);
-  let message;
+  let message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue},`;
 
   if (winner === RESULT_DRAW) {
-    message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue}, therefore you had a draw`;
+    message += ` had a draw`;
   } else if (winner === RESULT_PLAYER_WINS) {
-    message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue}, therefore you win`;
+    message += ` you win`;
   } else {
-    message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue}, therefore computer win`;
+    message += ` computer win`;
   }
   console.log(message);
 };
