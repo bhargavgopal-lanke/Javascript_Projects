@@ -26,7 +26,7 @@ const getPlayerChoice = function () {
 
 // get the winner
 
-const getWinner = (pChoice, cChoice) => {
+function getWinner(pChoice, cChoice) {
   if (pChoice === cChoice) {
     return RESULT_DRAW;
   } else if (
