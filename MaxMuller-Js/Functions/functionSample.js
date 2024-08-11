@@ -9,7 +9,7 @@ const person = {
   },
 };
 
-startGameBtn.addEventListener("click", start);
+// startGameBtn.addEventListener("click", start);
 // function declaration / function statement
 // it can be hoisted to the top, can be declared anywhere in the file.
 
