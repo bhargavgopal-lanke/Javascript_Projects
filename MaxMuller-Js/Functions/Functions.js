@@ -10,7 +10,7 @@ const RESULT_PLAYER_WINS = "PLAYER_WINS";
 const RESULT_COMPUTER_WINS = "COMPUTER_WINS";
 
 // the playyer choice
-const getPlayerChoice = function () {
+const getPlayerChoice = () => {
   // convert the entered values to uppercase using uppercase method.
   const selection = prompt(
     `${ROCK}, ${PAPER} or ${SCISSORS}?`,
@@ -26,7 +26,7 @@ const getPlayerChoice = function () {
 
 // get the winner
 
-function getWinner(pChoice, cChoice) {
+const getWinner = (pChoice, cChoice) => {
   if (pChoice === cChoice) {
     return RESULT_DRAW;
   } else if (
@@ -34,16 +34,14 @@ function getWinner(pChoice, cChoice) {
     (cChoice === PAPER && pChoice === SCISSORS) ||
     (cChoice === SCISSORS && pChoice === ROCK)
   ) {
-    console.log("RESULT_PLAYER_WINS", RESULT_PLAYER_WINS);
     return RESULT_PLAYER_WINS;
   } else {
-    console.log("RESULT_COMPUTER_WINS", RESULT_COMPUTER_WINS);
     return RESULT_COMPUTER_WINS;
   }
-}
+};
 
 //  the computer choice
-function getComputerChoice() {
+const getComputerChoice = () => {
   const randomValue = Math.floor(Math.random() * 10);
   let computerResult;
 
@@ -55,15 +53,23 @@ function getComputerChoice() {
     computerResult = SCISSORS;
   }
   return computerResult;
-}
-function playGame() {
+};
+const playGame = () => {
   const computerChoiceValue = getComputerChoice();
   const playerChoiceValue = getPlayerChoice();
-  getWinner(computerChoiceValue, playerChoiceValue);
-}
+  let winner = getWinner(computerChoiceValue, playerChoiceValue);
+  let message;
 
-startGameBtn.addEventListener("keydown", (e) => {
-  if (e.keyCode === 13) {
-    playGame();
+  if (winner === RESULT_DRAW) {
+    message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue}, therefore you had a draw`;
+  } else if (winner === RESULT_PLAYER_WINS) {
+    message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue}, therefore you win`;
+  } else {
+    message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue}, therefore computer win`;
   }
+  console.log(message);
+};
+
+startGameBtn.addEventListener("click", () => {
+  playGame();
 });
