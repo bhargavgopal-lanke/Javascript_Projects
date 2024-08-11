@@ -40,7 +40,7 @@ function getWinner(pChoice, cChoice) {
     console.log("RESULT_COMPUTER_WINS", RESULT_COMPUTER_WINS);
     return RESULT_COMPUTER_WINS;
   }
-};
+}
 
 //  the computer choice
 function getComputerChoice() {
@@ -62,6 +62,8 @@ function playGame() {
   getWinner(computerChoiceValue, playerChoiceValue);
 }
 
-startGameBtn.addEventListener("click", () => {
-  playGame();
+startGameBtn.addEventListener("keydown", (e) => {
+  if (e.keyCode === 13) {
+    playGame();
+  }
 });

@@ -9,7 +9,6 @@ const person = {
   },
 };
 
-
 startGameBtn.addEventListener("click", start);
 // function declaration / function statement
 // it can be hoisted to the top, can be declared anywhere in the file.
@@ -22,7 +21,4 @@ function multiply(a, b) {
 // hoisted to the top but not initialized/defined (i.e: not after it's used.)
 // multiply();  Cannot access multiply before initilization.
 
-const multiply1 = function (a, b) {
-const multiply = function (a, b) {
-  return a * b;
-};
+const multiply1 = function (a, b) {};
