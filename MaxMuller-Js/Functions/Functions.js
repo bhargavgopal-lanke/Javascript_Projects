@@ -63,9 +63,9 @@ const playGame = () => {
   if (winner === RESULT_DRAW) {
     message += ` had a draw`;
   } else if (winner === RESULT_PLAYER_WINS) {
-    message += ` you win`;
+    message += ` won`;
   } else {
-    message += ` computer win`;
+    message += ` lost`;
   }
   console.log(message);
 };
