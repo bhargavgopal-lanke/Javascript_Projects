@@ -25,7 +25,6 @@ const getPlayerChoice = function () {
 };
 
 // get the winner
-
 function getWinner(pChoice, cChoice) {
   if (pChoice === cChoice) {
     return RESULT_DRAW;
@@ -62,3 +61,7 @@ startGameBtn.addEventListener("click", () => {
   let playerChoiceResult = getPlayerChoice();
   console.log("getPlayerChoice", playerChoiceResult);
 });
+  }
+};
+
+startGameBtn.addEventListener("click", getPlayerChoice);
