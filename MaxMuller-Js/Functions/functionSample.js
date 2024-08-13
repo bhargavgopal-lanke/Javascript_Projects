@@ -26,11 +26,11 @@ const multiply1 = function (a, b) {};
 const sumUp = (...numbers) => {
   const validateNumber = (number) => {
     // if the number is not a number replace it with zero or keep the number
-    isNaN(number) ? 0 : number;
+   return isNaN(number) ? 0 : number;
   };
   let sum = 0;
   for (let num of numbers) {
-    sum += num;
+    sum += validateNumber(num);
   }
   return sum;
 };
