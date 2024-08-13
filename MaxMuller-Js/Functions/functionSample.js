@@ -53,5 +53,5 @@ const showResult = (result) => {
 };
 
 // 2. pass a function as an parameter to another function
-console.log(sumUp(showResult, 1, 2, 3, -4, "iu", 9, 11));
+sumUp(showResult, 1, 2, 3, -4, 8, 9, 11);
 console.log(subtratcUp(1, 2, 3, -4, 8, 9, 11));
