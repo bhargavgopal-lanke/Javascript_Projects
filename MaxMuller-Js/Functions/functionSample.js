@@ -48,8 +48,8 @@ const subtratcUp = (resultHandler, ...numbers) => {
 // 1. crate a function and pass it as an parameter to another function
 // we can't directly pass the function as an argument
 // we have to pass this as an parameter while calling a function and call this argument inside that function
-const showResult = (text, result) => {
-  console.log(`The result after ${text} all the numbers is ${result}`);
+const showResult = (messageText, result) => {
+  console.log(`The result after ${messageText} all the numbers is ${result}`);
 };
 
 // 2. pass a function as an parameter to another function
