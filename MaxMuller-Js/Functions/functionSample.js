@@ -35,7 +35,7 @@ const sumUp = (...numbers) => {
   return sum;
 };
 
-const subtratcUp = (numbers) => {
+const subtratcUp = (...numbers) => {
   let sum = 0;
   for (const sub of numbers) {
     sum -= sub;
@@ -43,5 +43,5 @@ const subtratcUp = (numbers) => {
   return sum;
 };
 
-console.log(sumUp(1, 2, 3, -4, 8, 9, 11));
+console.log(sumUp(1, 2, 3, -4, 'iu', 9, 11));
 console.log(subtratcUp(1, 2, 3, -4, 8, 9, 11));
