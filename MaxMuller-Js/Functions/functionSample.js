@@ -34,24 +34,24 @@ const sumUp = (resultHandler, ...numbers) => {
     sum += validateNumber(num);
   }
   // 4. call the function and pass the result argument inside this function
-  resultHandler(sum);
+  resultHandler("adding", sum);
 };
 
-const subtratcUp = (...numbers) => {
+const subtratcUp = (resultHandler, ...numbers) => {
   let sum = 0;
   for (const sub of numbers) {
     sum -= sub;
   }
-  return sum;
+  resultHandler("subtracting", sum);
 };
 
 // 1. crate a function and pass it as an parameter to another function
 // we can't directly pass the function as an argument
 // we have to pass this as an parameter while calling a function and call this argument inside that function
-const showResult = (result) => {
-  console.log(`The result after adding all the numbers is ${result}`);
+const showResult = (text, result) => {
+  console.log(`The result after ${text} all the numbers is ${result}`);
 };
 
 // 2. pass a function as an parameter to another function
 sumUp(showResult, 1, 2, 3, -4, 8, 9, 11);
-console.log(subtratcUp(1, 2, 3, -4, 8, 9, 11));
+subtratcUp(showResult, 1, 2, 3, -4, 8, 9, 11);
