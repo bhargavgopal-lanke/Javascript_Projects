@@ -45,7 +45,25 @@ const subtratcUp = (resultHandler, ...numbers) => {
   resultHandler("subtracting", sum);
 };
 
-// 1. crate a function and pass it as an parameter to another function
+const combine = (resultHandler, operator, ...numbers) => {
+  let resultNumberValue = 0;
+  const validateNumber = (num) => {
+    return isNaN(num) ? 0 : num;
+  };
+  let messageText;
+  for (let i = 0; i < numbers.length; i++) {
+    if (operator === "ADD") {
+      resultNumberValue += validateNumber(numbers[i]);
+      messageText = "adding";
+    } else {
+      resultNumberValue -= validateNumber(numbers[i]);
+      messageText = "sutracting";
+    }
+  }
+  resultHandler(messageText, resultNumberValue);
+};
+
+// 1. create a function and pass it as an parameter to another function
 // we can't directly pass the function as an argument
 // we have to pass this as an parameter while calling a function and call this argument inside that function
 const showResult = (messageText, result) => {
@@ -53,5 +71,8 @@ const showResult = (messageText, result) => {
 };
 
 // 2. pass a function as an parameter to another function
-sumUp(showResult, 1, 2, 3, -4, 8, 9, 11);
-subtratcUp(showResult, 1, 2, 3, -4, 8, 9, 11);
+// sumUp(showResult, 1, 2, 3, -4, 8, 9, 11);
+// subtratcUp(showResult, 1, 2, 3, -4, 8, 9, 11);
+
+combine(showResult, "ADD", 1, 2, 3, -4, 8, 9, 11);
+combine(showResult, 1, 2, 3, -4, 8, 9, 11);
