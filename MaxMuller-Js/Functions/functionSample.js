@@ -46,12 +46,12 @@ const subtratcUp = (...numbers) => {
 };
 
 // 1. crate a function and pass it as an parameter to another function
-// we can't directly pass the function as an parameter
-// we have to pass this as an argument while calling a function and pass it as a parametr inside that function
+// we can't directly pass the function as an argument
+// we have to pass this as an parameter while calling a function and call this argument inside that function
 const showResult = (result) => {
   console.log(`The result after adding all the numbers is ${result}`);
 };
 
-// 2. pass a function as an argument to another function
+// 2. pass a function as an parameter to another function
 console.log(sumUp(showResult, 1, 2, 3, -4, "iu", 9, 11));
 console.log(subtratcUp(1, 2, 3, -4, 8, 9, 11));
