@@ -22,3 +22,26 @@ function multiply(a, b) {
 // multiply();  Cannot access multiply before initilization.
 
 const multiply1 = function (a, b) {};
+
+const sumUp = (...numbers) => {
+  const validateNumber = (number) => {
+    // if the number is not a number replace it with zero or keep the number
+    isNaN(number) ? 0 : number;
+  };
+  let sum = 0;
+  for (let num of numbers) {
+    sum += num;
+  }
+  return sum;
+};
+
+const subtratcUp = (numbers) => {
+  let sum = 0;
+  for (const sub of numbers) {
+    sum -= sub;
+  }
+  return sum;
+};
+
+console.log(sumUp(1, 2, 3, -4, 8, 9, 11));
+console.log(subtratcUp(1, 2, 3, -4, 8, 9, 11));
