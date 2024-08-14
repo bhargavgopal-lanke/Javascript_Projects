@@ -4,12 +4,12 @@ const startGameBtn = document.getElementById("start-game-btn");
 const ROCK = "ROCK";
 const PAPER = "PAPER";
 const SCISSORS = "SCISSORS";
-const DEFAULT_CHOICE = "ROCK";
+const DEFAULT_USER_CHOICE = "ROCK";
 const RESULT_DRAW = "DRAW";
 const RESULT_PLAYER_WINS = "PLAYER_WINS";
 const RESULT_COMPUTER_WINS = "COMPUTER_WINS";
 
-// the playyer choice
+// the player choice
 const getPlayerChoice = () => {
   // convert the entered values to uppercase using uppercase method.
   const selection = prompt(
@@ -18,7 +18,7 @@ const getPlayerChoice = () => {
   ).toUpperCase();
 
   if (selection !== ROCK && selection !== PAPER && selection !== SCISSORS) {
-    alert(`Invalid Choice! We Chose ${DEFAULT_CHOICE} for you`);
+    alert(`Invalid Choice! We Chose ${DEFAULT_USER_CHOICE} for you`);
     return;
   }
   return selection;
@@ -26,7 +26,7 @@ const getPlayerChoice = () => {
 
 // get the winner
 
-const getWinner = (pChoice, cChoice) => {
+const getWinner = (pChoice = DEFAULT_USER_CHOICE, cChoice) => {
   if (pChoice === cChoice) {
     return RESULT_DRAW;
   } else if (
@@ -67,7 +67,9 @@ const playGame = () => {
     winner = getWinner(computerChoiceValue);
   }
 
-  let message = `You picked ${playerChoiceValue}, computer picked ${computerChoiceValue},`;
+  let message = `You picked ${
+    playerChoiceValue || DEFAULT_USER_CHOICE
+  }, computer picked ${computerChoiceValue},`;
 
   if (winner === RESULT_DRAW) {
     message += ` had a draw`;
