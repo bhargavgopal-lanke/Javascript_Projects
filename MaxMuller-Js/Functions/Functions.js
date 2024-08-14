@@ -67,10 +67,10 @@ const playGame = () => {
     winner = getWinner(computerChoiceValue);
   }
 
-
   let message = `You picked ${
     playerChoiceValue || DEFAULT_USER_CHOICE
   }, computer picked ${computerChoiceValue},`;
+
 
   if (winner === RESULT_DRAW) {
     message += ` had a draw`;
