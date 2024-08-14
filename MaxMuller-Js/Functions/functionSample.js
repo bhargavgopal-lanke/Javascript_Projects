@@ -73,6 +73,8 @@ const showResult = (messageText, result) => {
 // 2. pass a function as an parameter to another function
 // sumUp(showResult, 1, 2, 3, -4, 8, 9, 11);
 // subtratcUp(showResult, 1, 2, 3, -4, 8, 9, 11);
+// we cant call the function here
+
 
 combine(showResult, "ADD", 1, 2, 3, -4, 8, 9, 11);
 combine(showResult, 1, 2, 3, -4, 8, 9, 11);
