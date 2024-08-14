@@ -202,6 +202,19 @@ function remooveListItem3(itemNumber) {
   li[itemNumber - 1].remove();
 }
 
+function addbgColor() {
+  const scrollHeight = Math.floor(window.scrollY);
+  if (scrollHeight > 100) {
+    document.querySelector("body").style.backgroundColor = "green";
+  } else {
+    document.querySelector("body").style.backgroundColor = "white";
+  }
+}
+
+window.addEventListener("scroll", () => {
+  addbgColor();
+});
+
 // removeClearButton();
 // removeFirstItem(5);
 remooveListItem3(3);

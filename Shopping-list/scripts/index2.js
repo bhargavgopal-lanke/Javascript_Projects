@@ -36,9 +36,6 @@ function onInput(e) {
 }
 
 
-console.log(test)
-
-
 function onChecked(e) {
   console.log("checked boolean", e.target.checked);
   const checkedValue = e.target.checked;
