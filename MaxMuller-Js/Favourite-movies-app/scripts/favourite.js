@@ -18,23 +18,48 @@ function closeModal() {
   addMovieModal.classList.remove("visible");
 }
 
+// empty the input fileds value after submit
+const clearInputsHandler = () => {
+  userInputs.forEach((item) => {
+    item.value = "";
+  });
+};
+
+const movies = [];
+
 const addMovieHandler = () => {
   const titleValue = userInputs[0].value;
   const imageUrlValue = userInputs[1].value;
   const ratingValue = userInputs[2].value;
   // trim method remove the excess whitespace in the beginning and at the end of the input
+  // check the rating numbers that are too small and too high
   if (
     titleValue.trim() === "" ||
     imageUrlValue.trim() === "" ||
-    ratingValue.trim() === ""
+    ratingValue.trim() === "" ||
+    +ratingValue < 1 ||
+    +ratingValue > 5
   ) {
+    console.log("Please enter valid values (rating between 1 and 5)");
+    return;
   }
 
-  console.log(titleValue, imageUrlValue, ratingValue);
+  const newMovie = {
+    title: titleValue,
+    image: imageUrlValue,
+    ratingValue: ratingValue,
+  };
+
+  movies.push(newMovie);
+
+  toggleModalCard();
+  clearInputsHandler();
 };
 
 // click events triggering when clicking the button
 startAddMovieButton.addEventListener("click", toggleModalCard);
 modalClose.addEventListener("click", closeModal);
 modalCancelButton.addEventListener("click", closeModal);
-confirmAddMovieButton.addEventListener("click", addMovieHandler);
+confirmAddMovieButton.addEventListener("click", () => {
+  addMovieHandler();
+});
