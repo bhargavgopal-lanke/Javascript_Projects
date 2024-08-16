@@ -23,6 +23,12 @@ header button {
   text-transform: capitalize;
   border: none;
 }
+
+header button:hover {
+  background-color: yellow;
+  color: black;
+}
+
 section.peronalmovie-list {
   margin: 40px;
   padding: 30px;
