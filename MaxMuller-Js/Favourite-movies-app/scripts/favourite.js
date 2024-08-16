@@ -17,6 +17,6 @@ function closeModal() {
 }
 
 // click events triggering when clicking the button
-startAddMovieButton.addEventListener("click", () => toggleModalCard);
-modalClose.addEventListener("click", () => closeModal);
-modalCancelButton.addEventListener("click", () => closeModal);
+startAddMovieButton.addEventListener("click", toggleModalCard);
+modalClose.addEventListener("click", closeModal);
+modalCancelButton.addEventListener("click", closeModal);
