@@ -20,9 +20,13 @@ function closeModal() {
 
 // empty the input fileds value after submit
 const clearInputsHandler = () => {
-  userInputs.forEach((item) => {
-    item.value = "";
-  });
+  // using for loop
+  for (let usrInputs of userInputs) {
+    usrInputs.value = "";
+  }
+  // userInputs.forEach((item) => {
+  //   item.value = "";
+  // });
 };
 
 const movies = [];
@@ -52,7 +56,7 @@ const addMovieHandler = () => {
 
   movies.push(newMovie);
 
-  toggleModalCard();
+  // toggleModalCard();
   clearInputsHandler();
 };
 
