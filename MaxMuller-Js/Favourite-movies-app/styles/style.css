@@ -1,6 +1,8 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
 }
 
 .container {
@@ -45,4 +47,3 @@ section.peronalmovie-list {
     /* Right shadow */ 0px 25px 20px -20px rgba(0, 0, 0, 0.1),
     /* Bottom shadow */ -25px 0px 20px -20px rgba(0, 0, 0, 0.1); /* Left shadow */
 }
- 
