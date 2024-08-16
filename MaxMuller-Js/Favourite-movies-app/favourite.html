@@ -21,24 +21,25 @@
       <button
         type="button"
         data-bs-toggle="modal"
-        data-bs-target="#addMovieModal"
+        data-bs-target="#add-modal"
       >
         Add Movie
       </button>
     </header>
     <div class="container">
-      <section class="peronalmovie-list">
+      <section class="peronalmovie-list" id="entry-text">
         <p>Your personal movie database!</p>
       </section>
+      <ul id="movie-list"></ul>
     </div>
 
-    <!-- Modap popup HTML -->
+    <!-- Modal popup HTML -->
 
     <div
       class="modal fade"
-      id="addMovieModal"
+      id="add-modal"
       tabindex="-1"
-      aria-labelledby="addMovieModalLabel"
+      aria-labelledby="add-modalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
@@ -53,7 +54,7 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label class="modal-title" for="title" id="addMovieModalLabel"
+              <label class="modal-title" for="title" id="add-modalLabel"
                 >Movie title</label
               >
               <input type="text" class="form-control" name="title" id="title" />
@@ -86,9 +87,9 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Close
+              Cancel
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary">Add</button>
           </div>
         </div>
       </div>
