@@ -39,6 +39,7 @@ header button:hover {
   color: black;
 }
 
+
 section.peronalmovie-list {
   margin: 40px;
   padding: 30px;
@@ -48,6 +49,7 @@ section.peronalmovie-list {
     /* Right shadow */ 0px 25px 20px -20px rgba(0, 0, 0, 0.1),
     /* Bottom shadow */ -25px 0px 20px -20px rgba(0, 0, 0, 0.1); /* Left shadow */
 }
+
 
 .form-group {
   margin-bottom: 15px;
@@ -117,3 +119,4 @@ section.peronalmovie-list {
   border: none;
   cursor: pointer;
 }
+
