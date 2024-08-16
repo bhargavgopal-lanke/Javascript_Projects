@@ -39,17 +39,12 @@ header button:hover {
   color: black;
 }
 
-
 section.peronalmovie-list {
   margin: 40px;
   padding: 30px;
   text-align: center;
-  box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.1),
-    /* Top shadow */ 25px 0px 20px -20px rgba(0, 0, 0, 0.1),
-    /* Right shadow */ 0px 25px 20px -20px rgba(0, 0, 0, 0.1),
-    /* Bottom shadow */ -25px 0px 20px -20px rgba(0, 0, 0, 0.1); /* Left shadow */
+  box-shadow: 0 0 5px 2px #ccc;
 }
-
 
 .form-group {
   margin-bottom: 15px;
@@ -100,7 +95,7 @@ section.peronalmovie-list {
 .modal-content {
   max-width: 500px;
   margin: 1.75rem auto;
-  border: 1px solid black;
+  box-shadow: 0 0 5px 2px #ccc;
   padding: 10px 20px 30px;
   border-radius: 10px;
 }
@@ -113,10 +108,8 @@ section.peronalmovie-list {
   display: block;
 }
 
-
 .btn-close {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-
