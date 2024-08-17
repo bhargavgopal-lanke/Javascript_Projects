@@ -7,6 +7,7 @@ const modalClose = document.querySelector(".btn-close");
 const modalCancelButton = document.querySelector("#modalCancel-button");
 const confirmAddMovieButton = document.querySelector("#confirm-add-movie-btn");
 const userInputs = document.querySelectorAll("input");
+const entryTextSection = document.querySelector("#entry-text");
 
 // on click the add movie button toggle the add movie section card
 function toggleModalCard() {
@@ -31,6 +32,52 @@ const clearInputsHandler = () => {
 
 const movies = [];
 
+let movieInfo = JSON.parse(localStorage.getItem("movies"));
+
+const updateUI = () => {
+  if (movies.length === 0) {
+    entryTextSection.style.display = "block";
+  } else {
+    entryTextSection.style.display = "none";
+  }
+};
+
+function saveToStorage() {
+  localStorage.setItem("movies", JSON.stringify(movies));
+}
+
+function renderAllItems() {
+  const li = document.querySelector("ul");
+  let html;
+  movieInfo.forEach((listItem) => {
+    html += `
+      <div class="card">
+        <img src="${listItem.image}" alt=${listItem.title} class="card-img" />
+        <h1>${listItem.title}</h1>
+        <p class="title">${listItem.rating}/5 stars</p>
+      </div>
+  `;
+    li.innerHTML = html;
+  });
+}
+
+renderAllItems();
+
+const renderNewMovieElement = (title, imageUrl, rating) => {
+  const li = document.createElement("li");
+  li.className = "movie-element";
+  li.innerHTML = `
+    <div class="card">
+      <img src="${imageUrl}" alt=${title} class="card-img" />
+      <h1>${title}</h1>
+      <p class="title">${rating}/5 stars</p>
+    </div>
+  `;
+
+  const listRoot = document.querySelector("#movie-list");
+  listRoot.appendChild(li);
+};
+
 const addMovieHandler = () => {
   const titleValue = userInputs[0].value;
   const imageUrlValue = userInputs[1].value;
@@ -49,15 +96,21 @@ const addMovieHandler = () => {
   }
 
   const newMovie = {
+    id: Math.floor(Math.random() * 10),
     title: titleValue,
     image: imageUrlValue,
-    ratingValue: ratingValue,
+    rating: ratingValue,
   };
 
   movies.push(newMovie);
 
-  // toggleModalCard();
+  const { title, image, rating } = newMovie;
+
+  toggleModalCard();
   clearInputsHandler();
+  saveToStorage();
+  updateUI();
+  renderNewMovieElement(title, image, rating);
 };
 
 // click events triggering when clicking the button
