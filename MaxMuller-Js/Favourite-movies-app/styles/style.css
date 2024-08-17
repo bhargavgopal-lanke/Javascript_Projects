@@ -113,3 +113,66 @@ section.peronalmovie-list {
   border: none;
   cursor: pointer;
 }
+
+.movie-element__image img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+ul#movie-list {
+  padding: 0;
+  margin: 40px 0;
+  list-style: none;
+}
+
+/* css media card */
+
+.media-card .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.media-card .title {
+  color: grey;
+  font-size: 18px;
+  max-width: 120px;
+  margin: 0 auto;
+  background: orange;
+  border-radius: 25px;
+  padding: 5px 10px;
+}
+
+.media-card button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+img.card-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.media-card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.media-card button:hover,
+.media-card a:hover {
+  opacity: 0.7;
+}
