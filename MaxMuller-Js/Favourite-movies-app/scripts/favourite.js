@@ -32,7 +32,18 @@ const clearInputsHandler = () => {
 
 const movies = [];
 
-let movieInfo = JSON.parse(localStorage.getItem("movies"));
+const storedMovies = localStorage.getItem("movies") || "[]";
+
+function loadMovies() {
+  let movieInfo;
+  try {
+    movieInfo = JSON.parse(storedMovies);
+  } catch (error) {
+    console.error("Error parsing JSON:", error);
+    movieInfo = []; // Handle the error gracefully
+  }
+  return movieInfo;
+}
 
 const updateUI = () => {
   if (movies.length === 0) {
@@ -42,14 +53,34 @@ const updateUI = () => {
   }
 };
 
-function saveToStorage() {
-  localStorage.setItem("movies", JSON.stringify(movies));
+function saveToStorage(moviesList) {
+  localStorage.setItem("movies", JSON.stringify(moviesList));
+}
+console.log("moviesout", movies);
+if (movies.length > 0) {
+  console.log("movies", movies);
+  saveToStorage(movies);
+} else {
+  movies;
 }
 
-function renderAllItems() {
+const deleteMoviesHandler = (movieId) => {
+  let movieIndex = 0;
+  for (const movie of movies) {
+    if (movie.id === movieId) {
+      break;
+    }
+    movieIndex++;
+  }
+  movies.splice(movieIndex, 1);
+  const listRoot = document.querySelector("#movie-list");
+  listRoot.children[movieIndex].remove();
+};
+
+function renderAllItems(myArray) {
   const li = document.querySelector("ul");
   let html;
-  movieInfo.forEach((listItem) => {
+  myArray.forEach((listItem) => {
     html += `
       <div class="card">
         <img src="${listItem.image}" alt=${listItem.title} class="card-img" />
@@ -60,8 +91,6 @@ function renderAllItems() {
     li.innerHTML = html;
   });
 }
-
-renderAllItems();
 
 const renderNewMovieElement = (title, imageUrl, rating) => {
   const li = document.createElement("li");
@@ -108,15 +137,23 @@ const addMovieHandler = () => {
 
   toggleModalCard();
   clearInputsHandler();
-  saveToStorage();
   updateUI();
+
   renderNewMovieElement(title, image, rating);
+  saveToStorage(movies);
 };
 
 // click events triggering when clicking the button
 startAddMovieButton.addEventListener("click", toggleModalCard);
 modalClose.addEventListener("click", closeModal);
 modalCancelButton.addEventListener("click", closeModal);
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  let myArray = loadMovies();
+  console.log(myArray);
+  renderAllItems(myArray);
+});
+
 confirmAddMovieButton.addEventListener("click", () => {
   addMovieHandler();
 });
