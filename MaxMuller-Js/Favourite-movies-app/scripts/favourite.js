@@ -53,17 +53,14 @@ const updateUI = () => {
   }
 };
 
+// save the new movie in the local storage
 function saveToStorage(moviesList) {
   localStorage.setItem("movies", JSON.stringify(moviesList));
 }
-console.log("moviesout", movies);
-if (movies.length > 0) {
-  console.log("movies", movies);
-  saveToStorage(movies);
-} else {
-  movies;
-}
 
+
+
+// delete a movie
 const deleteMoviesHandler = (movieId) => {
   let movieIndex = 0;
   for (const movie of movies) {
@@ -77,6 +74,7 @@ const deleteMoviesHandler = (movieId) => {
   listRoot.children[movieIndex].remove();
 };
 
+// render all the items which are stored in localstorage
 function renderAllItems(myArray) {
   const li = document.querySelector("ul");
   let html;
@@ -92,6 +90,11 @@ function renderAllItems(myArray) {
   });
 }
 
+let myArray = loadMovies();
+renderAllItems(myArray);
+
+
+// render the new movie element
 const renderNewMovieElement = (title, imageUrl, rating) => {
   const li = document.createElement("li");
   li.className = "movie-element";
@@ -107,6 +110,8 @@ const renderNewMovieElement = (title, imageUrl, rating) => {
   listRoot.appendChild(li);
 };
 
+
+// add a new movie
 const addMovieHandler = () => {
   const titleValue = userInputs[0].value;
   const imageUrlValue = userInputs[1].value;
@@ -131,6 +136,7 @@ const addMovieHandler = () => {
     rating: ratingValue,
   };
 
+  // push the new movie to the array list
   movies.push(newMovie);
 
   const { title, image, rating } = newMovie;
@@ -138,7 +144,6 @@ const addMovieHandler = () => {
   toggleModalCard();
   clearInputsHandler();
   updateUI();
-
   renderNewMovieElement(title, image, rating);
   saveToStorage(movies);
 };
@@ -147,13 +152,6 @@ const addMovieHandler = () => {
 startAddMovieButton.addEventListener("click", toggleModalCard);
 modalClose.addEventListener("click", closeModal);
 modalCancelButton.addEventListener("click", closeModal);
-
-document.addEventListener("DOMContentLoaded", (event) => {
-  let myArray = loadMovies();
-  console.log(myArray);
-  renderAllItems(myArray);
-});
-
 confirmAddMovieButton.addEventListener("click", () => {
   addMovieHandler();
 });
