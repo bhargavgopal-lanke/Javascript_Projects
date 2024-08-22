@@ -58,22 +58,6 @@ function saveToStorage(moviesList) {
   localStorage.setItem("movies", JSON.stringify(moviesList));
 }
 
-
-
-// delete a movie
-const deleteMoviesHandler = (movieId) => {
-  let movieIndex = 0;
-  for (const movie of movies) {
-    if (movie.id === movieId) {
-      break;
-    }
-    movieIndex++;
-  }
-  movies.splice(movieIndex, 1);
-  const listRoot = document.querySelector("#movie-list");
-  listRoot.children[movieIndex].remove();
-};
-
 // render all the items which are stored in localstorage
 function renderAllItems(myArray) {
   const li = document.querySelector("ul");
@@ -88,14 +72,32 @@ function renderAllItems(myArray) {
   `;
     li.innerHTML = html;
   });
+  // li.addEventListener("click", deleteMoviesHandler.bind(null, id));
+  li.addEventListener("click", console.log('clicked'));
 }
 
 let myArray = loadMovies();
 renderAllItems(myArray);
 
+// delete a movie
+const deleteMoviesHandler = (movieId) => {
+  console.log("myArray", myArray);
+  let movieIndex = 0;
+  for (const movie of myArray) {
+    if (movie.id === movieId) {
+      break;
+    }
+    movieIndex++;
+  }
+  console.log("myArraySplice", myArray);
+  myArray.splice(movieIndex, 1);
+  const listRoot = document.querySelector("#movie-list");
+  listRoot.children[movieIndex].remove();
+  // listRoot.removeChild(listRoot.children[movieIndex]);
+};
 
 // render the new movie element
-const renderNewMovieElement = (title, imageUrl, rating) => {
+const renderNewMovieElement = (id, title, imageUrl, rating) => {
   const li = document.createElement("li");
   li.className = "movie-element";
   li.innerHTML = `
@@ -109,7 +111,6 @@ const renderNewMovieElement = (title, imageUrl, rating) => {
   const listRoot = document.querySelector("#movie-list");
   listRoot.appendChild(li);
 };
-
 
 // add a new movie
 const addMovieHandler = () => {
@@ -139,7 +140,7 @@ const addMovieHandler = () => {
   // push the new movie to the array list
   movies.push(newMovie);
 
-  const { title, image, rating } = newMovie;
+  const { id, title, image, rating } = newMovie;
 
   toggleModalCard();
   clearInputsHandler();
