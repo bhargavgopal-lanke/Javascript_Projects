@@ -73,7 +73,7 @@ function renderAllItems(myArray) {
     li.innerHTML = html;
   });
   // li.addEventListener("click", deleteMoviesHandler.bind(null, id));
-  li.addEventListener("click", console.log('clicked'));
+  li.addEventListener("click", console.log("clicked"));
 }
 
 let myArray = loadMovies();
@@ -156,3 +156,25 @@ modalCancelButton.addEventListener("click", closeModal);
 confirmAddMovieButton.addEventListener("click", () => {
   addMovieHandler();
 });
+
+// slice and splice methods
+
+const hobbies = ["sports", "cooking"];
+
+hobbies.push("Reading");
+hobbies.unshift("coding");
+
+console.log("hobbies", hobbies);
+
+hobbies[1] = "coding";
+
+// console.log("hobbies", hobbies, hobbies[3]);
+
+hobbies.splice(1, 0, "good food");
+
+// console.log("hobbies", hobbies);
+
+const removedElements = hobbies.splice(-2, 1);
+
+console.log("hobbies", hobbies);
+
