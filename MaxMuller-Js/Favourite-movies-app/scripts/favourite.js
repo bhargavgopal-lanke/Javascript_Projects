@@ -205,3 +205,11 @@ const manuel = personData.find((person, idx, persons) => {
 });
 
 console.log("Manuel", manuel);
+
+// manuelIndex method
+
+const manuelIndex = personData.findIndex((person, idx, persons) => {
+  return person.name === "Bhargav";
+});
+
+console.log("findIndex", manuelIndex);
