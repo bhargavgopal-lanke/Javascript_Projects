@@ -164,7 +164,7 @@ const hobbies = ["sports", "cooking"];
 hobbies.push("Reading");
 hobbies.unshift("coding");
 
-console.log("hobbies", hobbies);
+// console.log("hobbies", hobbies);
 
 hobbies[1] = "coding";
 
@@ -176,5 +176,24 @@ hobbies.splice(1, 0, "good food");
 
 const removedElements = hobbies.splice(-2, 1);
 
-console.log("hobbies", hobbies);
+// console.log("splice hobbies", hobbies);
 
+const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+// slice is used for selecting ranges
+// the slice method selects from a given start, up to a given end
+// it does not change the original array
+// negative values also works the same way from start to the end.
+const storedResults = testResults.slice(1, 4);
+
+testResults.push(5.91);
+
+console.log(storedResults, testResults);
+
+// splice method adds or remove elements
+// splice method overwrites the original array
+
+// indexOf() method returns negative value -1 if it doesn't find anything
+
+const personData = [{ name: "Max" }, { name: "Bhargav" }];
+
+console.log(personData.indexOf({ name: "Manuel" }));
