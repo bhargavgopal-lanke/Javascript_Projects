@@ -59,15 +59,28 @@ console.log("findIndex", manuelIndex);
 
 const prices = [1, 5.3, 1.5, 10.99, -5, 10];
 const tax = 0.19;
-const taxAdjustedPrices = [];
+// const taxAdjustedPrices = [];
 
 // for (const price of prices) {
 //   taxAdjustedPrices.push(price * (1 + tax));
 // }
 
-prices.forEach((price, idx, prices) => {
-  //   const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
-  taxAdjustedPrices.push(price * (1 + tax));
+const taxAdjustedPrices = prices.map((price, idx, prices) => {
+  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+  //   taxAdjustedPrices.push(price * (1 + tax));
+  //   taxAdjustedPrices.push(priceObj);
+  return priceObj;
 });
 
 console.log("taxAdjustedPrices", taxAdjustedPrices);
+
+// convert an array into an object
+function transformToObjects(numberArray) {
+  // Todo: Add your logic
+  // should return an array of objects
+  return numberArray.map((number) => {
+    return { val: number };
+  });
+}
+
+transformToObjects([1, 2, 3]);
