@@ -197,3 +197,11 @@ console.log(storedResults, testResults);
 const personData = [{ name: "Max" }, { name: "Bhargav" }];
 
 console.log(personData.indexOf({ name: "Manuel" }));
+
+// find method example
+// find method is used to find the element
+const manuel = personData.find((person, idx, persons) => {
+  return person.name === "Bhargav";
+});
+
+console.log("Manuel", manuel);
