@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favourite movie app</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Favourite Movies</h1>
+      <button type="button" id="addmovie-btn">
+        Add Movie
+      </button>
+    </header>
+    <div class="container">
+      <section class="peronalmovie-list" id="entry-text">
+        <p>Your personal movie database!</p>
+      </section>
+      <div class="media-card">
+        <ul id="movie-list"></ul>
+      </div>
+    </div>
+
+    <!-- Modal popup HTML -->
+
+    <div class="modal" id="add-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            X
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="modal-title" for="title" id="add-modalLabel"
+              >Movie title</label
+            >
+            <input type="text" class="form-control" name="title" id="title" />
+          </div>
+          <div class="form-group">
+            <label for="img-url">Image Url</label>
+            <input
+              type="text"
+              class="form-control"
+              name="img-url"
+              id="img-url"
+            />
+          </div>
+          <div class="form-group">
+            <label for="rating">Your Rating</label>
+            <input
+              type="number"
+              class="form-control"
+              step="1"
+              max="5"
+              min="1"
+              name="rating"
+              id="rating"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="modalCancel-button"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="confirm-add-movie-btn"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/favourite.js"></script>
+  </body>
+</html>

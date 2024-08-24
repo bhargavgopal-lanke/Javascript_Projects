@@ -1,0 +1,178 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+  background-color: blue;
+}
+
+header h1 {
+  color: white;
+  cursor: pointer;
+}
+
+header button {
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: yellow;
+  color: black;
+}
+
+section.peronalmovie-list {
+  margin: 40px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 5px 2px #ccc;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  display: block;
+  width: 93%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  margin: 0;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.modal-header {
+  border: none;
+  padding: 15px 15px 0;
+}
+
+.modal {
+  display: none;
+}
+
+.modal-content {
+  max-width: 500px;
+  margin: 1.75rem auto;
+  box-shadow: 0 0 5px 2px #ccc;
+  padding: 10px 20px 30px;
+  border-radius: 10px;
+}
+
+.modal-header {
+  text-align: right;
+}
+
+.modal.visible {
+  display: block;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.movie-element__image img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+ul#movie-list {
+  padding: 0;
+  margin: 40px 0;
+  list-style: none;
+}
+
+/* css media card */
+
+.media-card .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.media-card .title {
+  color: grey;
+  font-size: 18px;
+  max-width: 120px;
+  margin: 0 auto;
+  background: orange;
+  border-radius: 25px;
+  padding: 5px 10px;
+}
+
+.media-card button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+img.card-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.media-card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.media-card button:hover,
+.media-card a:hover {
+  opacity: 0.7;
+}
