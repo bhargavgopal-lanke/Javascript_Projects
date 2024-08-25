@@ -101,3 +101,10 @@ console.log(sortedPrices);
 const filteredArray = prices.filter((p) => p > 6);
 
 console.log("filteredArray", filteredArray);
+
+// split the string into an array
+
+const dataString = "new york;10.99;2000";
+
+const transformedData = dataString.split(";");
+console.log("transformedData", transformedData);
