@@ -108,3 +108,11 @@ const dataString = "new york;10.99;2000";
 
 const transformedData = dataString.split(";");
 console.log("transformedData", transformedData);
+
+// join method
+
+const nameFragments = ["Max", "Schwarz"];
+
+const nameJoin = nameFragments.join(" ");
+
+console.log("nameJoin", nameJoin);
