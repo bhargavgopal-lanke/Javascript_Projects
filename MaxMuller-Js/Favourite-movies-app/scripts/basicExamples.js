@@ -124,3 +124,19 @@ const copiedNameFragments = [...nameFragments];
 nameFragments.push("Mr");
 
 console.log(nameFragments, copiedNameFragments);
+
+const persons = [
+  { name: "Max", age: 30 },
+  { name: "Bhargav", age: 28 },
+];
+
+const copiedPersons = persons.map((person) => ({
+  name: person.name,
+  age: person.age,
+}));
+
+persons.push({ name: "Gopal", age: 28 });
+// override the person data
+persons[0].age = 31;
+
+console.log(persons, copiedPersons);
