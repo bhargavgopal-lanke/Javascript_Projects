@@ -116,3 +116,11 @@ const nameFragments = ["Max", "Schwarz"];
 const nameJoin = nameFragments.join(" ");
 
 console.log("nameJoin", nameJoin);
+
+// copied name fragments
+
+const copiedNameFragments = [...nameFragments];
+
+nameFragments.push("Mr");
+
+console.log(nameFragments, copiedNameFragments);
