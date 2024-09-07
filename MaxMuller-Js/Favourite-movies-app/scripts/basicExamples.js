@@ -140,3 +140,16 @@ persons.push({ name: "Gopal", age: 28 });
 persons[0].age = 31;
 
 console.log(persons, copiedPersons);
+
+const person1 = { name: "Manuel" };
+
+const personMapData = new Map([[person1, [{ date: "Yesterday", price: 10 }]]]);
+
+personMapData.set(person1, [{ date: "two weeks ago", price: 100 }]);
+
+console.log("personMapData", personMapData);
+console.log("personMapData person1", personMapData.get(person1));
+
+for (const [key, value] of personMapData.entries()) {
+  console.log(key, value);
+}
