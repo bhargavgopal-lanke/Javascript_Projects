@@ -1,19 +1,8 @@
-const person = {
-  name: "Bhargav",
-  age: 30,
-  hobbies: ["sports", "cooking"],
-  greet: function () {
-    alert("Hi there!");
-  },
-};
+const addMoviebutton = document.getElementById("add-movvie-btn");
 
-const personOne = {
-  "first name": "Bhargav",
-  age: 30,
-  hobbies: ["sports", "cooking"],
-  greet: function () {
-    alert("Hi there!");
-  },
-};
+const searchButton = document.getElementById("serach-btn");
 
-console.log("object key value destructure",personOne["first name"]);
+const addMovieHandler = () => {
+  const title = document.getElementById("title").value;
+  const extraName = document.getElementById("extra-name");
+};
