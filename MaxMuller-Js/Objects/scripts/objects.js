@@ -51,3 +51,23 @@ const addMovieHandler = () => {
 };
 
 addMoviebutton.addEventListener("click", addMovieHandler);
+
+// dynamic key passing practice
+// objects outputs in an alphabetical order.
+const userKeyName = "hobbies";
+
+let person = {
+  'first name' : 'Bhargav',
+  age: 30,
+  [userKeyName]: ['Sports', 'Cooking'],
+  greet: function() {
+    alert('Hi there!');
+  },
+  1.5: 'hello'
+}
+
+const keyName = "first name";
+
+console.log(person)
+
+
