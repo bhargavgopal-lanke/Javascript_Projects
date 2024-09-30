@@ -30,7 +30,7 @@ function run() {
 
 // get the button from the dom and assign the function to the event listener
 // when we click on this button add the class to the paragraph
-document.querySelector("button").onclick = run;
+document.querySelector("button").onclick = run; 
 
 // do something after every 5 secs
 

@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  width: 60%;
+  margin: 60px auto;
+}
+
+.control {
+  margin-bottom: 15px;
+}
+
+.control input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 15px 0 0;
+}
+
+button {
+  width: 200px;
+  margin: 40px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  border-radius: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+  button {
+    max-width: 100%;
+  }
+}
+
+#movie-list {
+  display: none;
+  list-style: none;
+  padding: 1rem;
+}
+
+#movie-list.visible {
+  display: block;
+}
+
+#movie-list li {
+  margin: 1rem;
+  color: #ff0062;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
