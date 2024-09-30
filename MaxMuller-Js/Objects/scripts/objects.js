@@ -1,5 +1,4 @@
 const addMoviebutton = document.getElementById("add-movie-btn");
-
 const searchButton = document.getElementById("serach-btn");
 
 const movies = [];
@@ -20,14 +19,22 @@ const renderMovies = () => {
 
   movies.forEach((movie) => {
     const movieEl = document.createElement("li");
-    movieEl.textContent = movie.info.title;
+    let text = movie.info.title + " - ";
+    // accessing the dynamic values when we dont know what user going to enter 
+    // then loop through the object using for in loop and assign the value to variable
+    for (const key in movie.info) {
+      if (key !== "title") {
+        text = text + `${key} : ${movie.info[key]}`;
+      }
+    };
+    movieEl.textContent = text;
     movieList.append(movieEl);
   });
 };
 
 const addMovieHandler = () => {
   const title = document.getElementById("title").value;
-  const extraName = document.getElementById("extra-name").value;
+  let extraName = document.getElementById("extra-name").value;
   const extraValue = document.getElementById("extra-value").value;
 
   if (
@@ -57,17 +64,15 @@ addMoviebutton.addEventListener("click", addMovieHandler);
 const userKeyName = "hobbies";
 
 let person = {
-  'first name' : 'Bhargav',
+  "first name": "Bhargav",
   age: 30,
-  [userKeyName]: ['Sports', 'Cooking'],
-  greet: function() {
-    alert('Hi there!');
+  [userKeyName]: ["Sports", "Cooking"],
+  greet: function () {
+    alert("Hi there!");
   },
-  1.5: 'hello'
-}
+  1.5: "hello",
+};
 
 const keyName = "first name";
 
-console.log(person)
-
-
+console.log(person);
