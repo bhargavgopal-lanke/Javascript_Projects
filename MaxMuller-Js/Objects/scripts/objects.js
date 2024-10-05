@@ -3,7 +3,7 @@ const searchButton = document.getElementById("serach-btn");
 
 const movies = [];
 
-const renderMovies = () => {
+const renderMovies = (filter = '') => {
   const movieList = document.getElementById("movie-list");
 
   // if there are no movies execute below code and remove the classname visible from movie-list div
@@ -16,6 +16,8 @@ const renderMovies = () => {
     movieList.classList.add("visible");
   }
   movieList.innerHTML = "";
+
+  const filterMovies = !filter ? movies : movies.filter((movie) => movie.info.title.includes(filter));
 
   movies.forEach((movie) => {
     const movieEl = document.createElement("li");
