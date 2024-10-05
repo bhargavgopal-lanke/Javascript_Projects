@@ -3,7 +3,7 @@
 const hobbies = ["Cooking", "Sports"];
 const personalData = [30, "Max", { moreDetail: [] }];
 
-// flatten arrays
+// multidimentional array
 const analyticsData = [
   [1, 1.6],
   [-5.4, 2.1],
