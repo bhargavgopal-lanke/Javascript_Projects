@@ -1,4 +1,6 @@
 // array practice
+// the length of an array is alway indexValues - 1  
+// arrays are index based and the first element starts with zero.
 
 const hobbies = ["Cooking", "Sports"];
 const personalData = [30, "Max", { moreDetail: [] }];
