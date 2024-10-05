@@ -14,8 +14,12 @@ console.log(hobbies);
 hobbies[1] = 'Coding';
 
 hobbies.splice(0, 0, 'Good Food');
-// splice without index position will delete all the items for that index position inside an array
+// 1. splice without index position will delete all the items for that 
+// index position inside an array
 hobbies.splice(0);
+// 2. if we give negative index value splice will check from last value in the array.
+const removedElements = hobbies.splice(-1, 1);
+
 console.log("hobbies", hobbies);
 
 const personalData = [30, "Max", { moreDetail: [] }];
