@@ -3,7 +3,7 @@ const searchButton = document.getElementById("serach-btn");
 
 const movies = [];
 
-const renderMovies = (filter = '') => {
+const renderMovies = (filter = "") => {
   const movieList = document.getElementById("movie-list");
 
   // if there are no movies execute below code and remove the classname visible from movie-list div
@@ -17,18 +17,21 @@ const renderMovies = (filter = '') => {
   }
   movieList.innerHTML = "";
 
-  const filterMovies = !filter ? movies : movies.filter((movie) => movie.info.title.includes(filter));
+  const filterMovies = !filter
+    ? movies
+    : movies.filter((movie) => movie.info.title.includes(filter));
 
-  movies.forEach((movie) => {
+  filterMovies.forEach((movie) => {
     const movieEl = document.createElement("li");
-    let text = movie.info.title + " - ";
-    // accessing the dynamic values when we dont know what user going to enter 
+    const { info } = movie;
+    let text = info.title + " - ";
+    // accessing the dynamic values when we dont know what user going to enter
     // then loop through the object using for in loop and assign the value to variable
-    for (const key in movie.info) {
+    for (const key in info) {
       if (key !== "title") {
-        text = text + `${key} : ${movie.info[key]}`;
+        text = text + `${key} : ${info[key]}`;
       }
-    };
+    }
     movieEl.textContent = text;
     movieList.append(movieEl);
   });
