@@ -23,8 +23,12 @@ const renderMovies = (filter = "") => {
 
   filterMovies.forEach((movie) => {
     const movieEl = document.createElement("li");
-    const { info } = movie;
-    let text = info.title + " - ";
+    
+    const { info, ...otherProps } = movie;
+    console.log("otherProps", otherProps);
+    const { title: movieTitle } = info;
+    console.log("title", movieTitle);
+    let text = movieTitle + " - ";
     // accessing the dynamic values when we dont know what user going to enter
     // then loop through the object using for in loop and assign the value to variable
     for (const key in info) {
@@ -55,7 +59,7 @@ const addMovieHandler = () => {
       title,
       [extraName]: extraValue,
     },
-    id: Math.random() * 10,
+    id: Math.floor(Math.random() * 10),
   };
 
   movies.push(newMovie);
