@@ -68,7 +68,9 @@ const addMovieHandler = () => {
       [extraName]: extraValue,
     },
     id: Math.floor(Math.random() * 10),
-    getFormattedTitle: function () {
+    // getFormattedTitle: function () {
+    // below is the shorter syntax for methods in objects.
+    getFormattedTitle() {
       // this keyword defines, look into the object where this function is part of.
       // this in regular functions defines the object it belongs to
       return this.info?.title?.toUpperCase();
