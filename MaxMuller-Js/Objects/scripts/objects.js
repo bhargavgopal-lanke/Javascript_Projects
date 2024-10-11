@@ -24,7 +24,11 @@ const renderMovies = (filter = "") => {
   filterMovies.forEach((movie) => {
     const movieEl = document.createElement("li");
     // check if a value is present in an object or not
-    if('info' in movie) {
+    if ("info" in movie) {
+      console.log("run this code");
+    }
+    // execute the if condition if info is not present inside the object.
+    if (!("info" in movie)) {
       console.log("run this code");
     }
     const { info, ...otherProps } = movie;
