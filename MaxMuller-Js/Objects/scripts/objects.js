@@ -1,5 +1,5 @@
 const addMoviebutton = document.getElementById("add-movie-btn");
-const searchButton = document.getElementById("serach-btn");
+const searchButton = document.getElementById("search-btn");
 
 const movies = [];
 
@@ -33,8 +33,9 @@ const renderMovies = (filter = "") => {
     }
     // extract the method from an object.
     const { info, ...otherProps } = movie;
-    const { getFormattedTitle } = movie;
-    console.log("getFormattedTitle", movie.getFormattedTitle());
+    let { getFormattedTitle } = movie;
+    console.log("this", this);
+    getFormattedTitle = getFormattedTitle.bind(movie);
     const { title: movieTitle } = info; // destructuring with different name
     let text = movie.getFormattedTitle() + " - ";
     // accessing the dynamic values when we dont know what user going to enter
@@ -81,7 +82,13 @@ const addMovieHandler = () => {
   renderMovies();
 };
 
+const searchMovieHandler = () => {
+  const filterItem = document.getElementById("filter-title").value;
+  renderMovies(filterItem);
+};
+
 addMoviebutton.addEventListener("click", addMovieHandler);
+searchButton.addEventListener("click", searchMovieHandler);
 
 // dynamic key passing practice
 // objects outputs in an alphabetical order.
