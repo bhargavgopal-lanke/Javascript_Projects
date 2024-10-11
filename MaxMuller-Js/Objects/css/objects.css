@@ -1,6 +1,12 @@
 body {
   margin: 0;
   padding: 0;
+  color: #3a3b4c;
+  font-family: "Open Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .card {
@@ -27,6 +33,7 @@ button {
   justify-content: center;
   background: transparent;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 
@@ -36,11 +43,28 @@ button {
   }
 }
 
+#filter {
+  display: none;
+}
+
+.card {
+  padding: 40px;
+  border: 2px solid #3a3b4c;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+
 #movie-list {
   display: none;
   list-style: none;
   padding: 1rem;
 }
+
+.visible {
+  display: block;
+}
+
 
 #movie-list.visible {
   display: block;
@@ -52,3 +76,4 @@ button {
   font-weight: bold;
   font-size: 1.5rem;
 }
+
