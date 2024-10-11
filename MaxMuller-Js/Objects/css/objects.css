@@ -36,6 +36,7 @@ button {
   cursor: pointer;
 }
 
+
 @media screen and (max-width: 768px) {
   button {
     max-width: 100%;
@@ -53,6 +54,7 @@ button {
   margin-bottom: 40px;
 }
 
+
 #movie-list {
   display: none;
   list-style: none;
@@ -62,6 +64,7 @@ button {
 .visible {
   display: block;
 }
+
 
 #movie-list.visible {
   display: block;
@@ -73,3 +76,4 @@ button {
   font-weight: bold;
   font-size: 1.5rem;
 }
+

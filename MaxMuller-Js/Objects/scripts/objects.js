@@ -4,6 +4,7 @@ const searchButton = document.getElementById("serach-btn");
 const movies = [];
 
 const renderMovies = (filter = "") => {
+
   const movieList = document.getElementById("movie-list");
 
   // if there are no movies execute below code and remove the classname visible from movie-list div
