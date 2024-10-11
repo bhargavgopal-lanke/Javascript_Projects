@@ -4,7 +4,6 @@ const searchButton = document.getElementById("serach-btn");
 const movies = [];
 
 const renderMovies = (filter = "") => {
-
   const movieList = document.getElementById("movie-list");
 
   // if there are no movies execute below code and remove the classname visible from movie-list div
@@ -32,11 +31,12 @@ const renderMovies = (filter = "") => {
     if (!("info" in movie)) {
       console.log("run this code");
     }
+    // extract the method from an object.
     const { info, ...otherProps } = movie;
-    console.log("otherProps", otherProps);
-    const { title: movieTitle } = info;
-    console.log("title", movieTitle);
-    let text = movieTitle + " - ";
+    const { getFormattedTitle } = movie;
+    console.log("getFormattedTitle", movie.getFormattedTitle());
+    const { title: movieTitle } = info; // destructuring with different name
+    let text = movie.getFormattedTitle() + " - ";
     // accessing the dynamic values when we dont know what user going to enter
     // then loop through the object using for in loop and assign the value to variable
     for (const key in info) {
@@ -68,11 +68,11 @@ const addMovieHandler = () => {
       [extraName]: extraValue,
     },
     id: Math.floor(Math.random() * 10),
-    getFormattedTitle: function() {
+    getFormattedTitle: function () {
       // this keyword defines, look into the object where this function is part of.
       // this in regular functions defines the object it belongs to
-      return this.info.title.toUpperCase();
-    }
+      return this.info?.title?.toUpperCase();
+    },
   };
 
   movies.push(newMovie);
