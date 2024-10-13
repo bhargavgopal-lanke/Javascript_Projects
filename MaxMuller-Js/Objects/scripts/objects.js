@@ -115,6 +115,7 @@ const members = {
   people: ["Max", "Manuel"],
   getTeamMembers() {
     this.people.forEach((p) => {
+      console.log('this', this);
       console.log(p + "-" + this.teamName);
     });
   },
