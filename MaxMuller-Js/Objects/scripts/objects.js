@@ -107,3 +107,19 @@ let person = {
 const keyName = "first name";
 
 console.log(person);
+
+// Interview members example
+
+const members = {
+  teamName: "Blue Rockets",
+  people: ["Max", "Manuel"],
+  getTeamMembers() {
+    this.people.forEach((p) => {
+      console.log(p + "-" + this.teamName);
+    });
+  },
+};
+
+const result = members.getTeamMembers();
+
+console.log(result);
