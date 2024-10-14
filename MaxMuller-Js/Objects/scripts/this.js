@@ -9,7 +9,7 @@ console.log("this outside of any function", this); // logs global object always 
 // 2. this in a function (non-arrow) - called in the global context
 
 function somethingOne() {
-  console.log(this);
+  console.log("this in regular function", this);
 }
 
 somethingOne(); // logs global object in non strict mode, undefined in strict mode
@@ -17,19 +17,31 @@ somethingOne(); // logs global object in non strict mode, undefined in strict mo
 // 3.  this in an arrow function - called in an global context
 
 const somethingTwo = () => {
-  console.log(this);
+  console.log("this in a arrow funtion", this);
 };
 
 somethingTwo(); // logs global object ALWAYS (also in strict mode)
 
 // 4. this in an Method (non-arrow) - Called on an object
 
-const person = {
+const personOne = {
   name: "Bhargav",
   greet: function () {
     // or use method shorthand: greet() {...}
-    console.log(this.name);
+    console.log("this in an regular method inside an object", this.name);
   },
 };
 
-person.greet(); // logs 'Bhargav', this refers to the person object in non arrow functions.
+personOne.greet(); // logs 'Bhargav', this refers to the person object in non arrow functions.
+
+// 5.this in an method (arrow function) - Called on an object
+
+const Person = {
+  name: "Gopal",
+  greet: () => {
+    console.log("this in arrow method inside an object", this.name);
+  },
+};
+
+Person.greet(); // logs nothing (or some global name on window object),
+// this refers to global (window) object, even in strict mode
