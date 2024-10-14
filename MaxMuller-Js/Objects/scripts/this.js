@@ -45,3 +45,25 @@ const Person = {
 
 Person.greet(); // logs nothing (or some global name on window object),
 // this refers to global (window) object, even in strict mode
+
+// Important examples to remember
+
+const personThree = {
+  name: "Bhargav",
+  greetThree() {
+    console.log("person three", this.name);
+  },
+};
+
+const { greetThree } = personThree;
+greetThree.call(personThree); // "this" is bound to the person object via call().
+
+const personFour = {
+  name: "Lanke",
+  greetFour() {
+    console.log("person four", this.name);
+  },
+};
+
+const { greetFour } = personFour;
+greetFour.call(this); // check this
