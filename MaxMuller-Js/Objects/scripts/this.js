@@ -21,3 +21,15 @@ const somethingTwo = () => {
 };
 
 somethingTwo(); // logs global object ALWAYS (also in strict mode)
+
+// 4. this in an Method (non-arrow) - Called on an object
+
+const person = {
+  name: "Bhargav",
+  greet: function () {
+    // or use method shorthand: greet() {...}
+    console.log(this.name);
+  },
+};
+
+person.greet(); // logs 'Bhargav', this refers to the person object in non arrow functions.
