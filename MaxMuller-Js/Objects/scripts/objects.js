@@ -41,7 +41,7 @@ const renderMovies = (filter = "") => {
     // accessing the dynamic values when we dont know what user going to enter
     // then loop through the object using for in loop and assign the value to variable
     for (const key in info) {
-      if (key !== "title") {
+      if (key !== "title" && key !== "_title") {
         text = text + `${key} : ${info[key]}`;
       }
     }
@@ -65,7 +65,16 @@ const addMovieHandler = () => {
 
   const newMovie = {
     info: {
-      title,
+      set title(val) {
+        if (val.trim() === "") {
+          this._title = "DEFAULT";
+          return; // do not continue with the next line after return;
+        }
+        this._title = val;
+      },
+      get title() {
+        return this._title;
+      },
       [extraName]: extraValue,
     },
     id: Math.floor(Math.random() * 10),
@@ -77,6 +86,8 @@ const addMovieHandler = () => {
       return this.info?.title?.toUpperCase();
     },
   };
+
+  newMovie.info.title = title;
 
   movies.push(newMovie);
   renderMovies();
@@ -115,7 +126,7 @@ const members = {
   people: ["Max", "Manuel"],
   getTeamMembers() {
     this.people.forEach((p) => {
-      console.log('this', this);
+      console.log("this", this);
       console.log(p + "-" + this.teamName);
     });
   },
