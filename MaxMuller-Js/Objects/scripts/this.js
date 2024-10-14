@@ -14,3 +14,10 @@ function somethingOne() {
 
 somethingOne(); // logs global object in non strict mode, undefined in strict mode
 
+// 3.  this in an arrow function - called in an global context
+
+const somethingTwo = () => {
+  console.log(this);
+};
+
+somethingTwo(); // logs global object ALWAYS (also in strict mode)
