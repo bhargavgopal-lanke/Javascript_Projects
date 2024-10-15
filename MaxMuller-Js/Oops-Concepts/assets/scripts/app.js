@@ -1,30 +1,34 @@
 // classes are blueprints for objects
 // classes works mostly in chrome browser for supporting in other browsers need to do something.
+// constructor method comes inside a class.
 class Product {
   title = "DEFAULT";
   imageUrl;
   price;
   description;
-}
 
-console.log("class console", new Product());
+  constructor(title, image, price, desc) {
+    this.title = title;
+    this.imageUrl = image;
+    this.price = price;
+    this.description = desc;
+  }
+}
 
 const productsList = {
   products: [
-    {
-      title: "A Lake Wallposter",
-      imageUrl:
-        "https://wallpaper.forfun.com/fetch/62/624e27fde335d49e2dd3c6b75c6027a3.jpeg?download=nature-novaya_zelandiya-ostrov-ozero-uanaka-50812.jpeg",
-      price: 19.99,
-      description: "A great wallposter",
-    },
-    {
-      title: "Japan City",
-      imageUrl:
-        "https://wallpaper.forfun.com/fetch/d9/d99cfc4cec7dad7bedc999a2e23802e5.jpeg?download=anime-doma-goroda-27499.jpeg",
-      price: 89.99,
-      description: "A Japan city wallposter",
-    },
+    new Product(
+      "A Lake Wallposter",
+      "https://wallpaper.forfun.com/fetch/62/624e27fde335d49e2dd3c6b75c6027a3.jpeg?download=nature-novaya_zelandiya-ostrov-ozero-uanaka-50812.jpeg",
+      19.99,
+      "A great wallposter"
+    ),
+    new Product(
+      "Japan City",
+      "https://wallpaper.forfun.com/fetch/d9/d99cfc4cec7dad7bedc999a2e23802e5.jpeg?download=anime-doma-goroda-27499.jpeg",
+      89.99,
+      "A Japan city wallposter"
+    ),
   ],
   render() {
     const renderHook = document.getElementById("app");
