@@ -2,3 +2,39 @@ body {
   margin: 0;
   padding: 0;
 }
+
+ul.product-list {
+  margin: 0;
+  padding: 0;
+}
+
+ul.product-list li.product-item img {
+  max-width: 100%;
+}
+
+li.product-item {
+  list-style-type: none;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0px 0px 2px 2px gray;
+}
+
+li.product-item .product-item__content {
+  text-align: center;
+  padding: 20px;
+}
+
+li.product-item button {
+  padding: 15px 20px;
+  border-radius: 8px;
+  background-color: purple;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  ul.product-list {
+    padding: 0 15px;
+  }
+}
