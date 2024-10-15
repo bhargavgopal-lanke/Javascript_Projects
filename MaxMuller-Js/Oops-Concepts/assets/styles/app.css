@@ -17,7 +17,7 @@ li.product-item {
   list-style-type: none;
   max-width: 500px;
   margin: 40px auto;
-  box-shadow: 0px 0px 2px 2px gray;
+  box-shadow: 0 0 10px 4px #ccc;
 }
 
 li.product-item .product-item__content {
