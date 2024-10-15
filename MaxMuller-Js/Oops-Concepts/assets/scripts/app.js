@@ -1,3 +1,14 @@
+// classes are blueprints for objects
+// classes works mostly in chrome browser for supporting in other browsers need to do something.
+class Product {
+  title = "DEFAULT";
+  imageUrl;
+  price;
+  description;
+}
+
+console.log("class console", new Product());
+
 const productsList = {
   products: [
     {
